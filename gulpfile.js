@@ -8,14 +8,17 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	rupture = require('rupture'),
 	copy = require('gulp-copy'),
-	poststylus = require('poststylus');
-	reload = browserSync.reload;
+	poststylus = require('poststylus'),
+	browserify = require('gulp-browserify');
+
+var reload = browserSync.reload;
 
 var config = {
 	pugSrc: './source/pug/pages/*.pug',
 	stylusSrc: './source/stylus/app.styl',
 	svgSrc: './source/images/svg/*.svg',
-	fontsSrc: './source/fonts/*.css'
+	fontsSrc: './source/fonts/*.css',
+	jsSrc: './source/js/app.js'
 };
 
 gulp.task('views', function buildHTML() {
@@ -57,6 +60,17 @@ gulp.task('copy', function () {
 		.pipe(gulp.dest('./web/fonts/'));
 });
 
+gulp.task('scripts', function() {
+	// Single entry point to browserify
+	gulp.src('./source/js/app.js')
+		.pipe(browserify({
+			insertGlobals : true,
+			debug : !gulp.env.production
+		}))
+		.pipe(gulp.dest('./web/js/'))
+		.pipe(reload({stream:true}));
+});
+
 gulp.task('browser-sync', function() {
 	browserSync.init({
 		server: {
@@ -69,6 +83,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 	gulp.watch('./source/stylus/**/*.styl', ['styles']);
 	gulp.watch('./source/pug/**/*.pug', ['views']);
+	gulp.watch('./source/js/**/*.js', ['scripts']);
 });
 
-gulp.task('default', ['views', 'styles', 'svg', 'copy', 'watch', 'browser-sync']);
+gulp.task('default', ['views', 'styles', 'scripts', 'svg', 'copy', 'watch', 'browser-sync']);
