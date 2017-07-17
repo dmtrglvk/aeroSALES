@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="52px" viewBox="0 0 58 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 16</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="52.2973248%" y1="0%" x2="50%" y2="73.3608451%" id="linearGradient-1">
+            <stop stop-color="#3023AE" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#C86DD7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#2AB5BD" offset="0%"></stop>
+            <stop stop-color="#429321" stop-opacity="0.507019928" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Growth-Report-Editor" transform="translate(-925.000000, -416.000000)">
+            <g id="Group-16" transform="translate(926.000000, 416.000000)">
+                <polyline id="Path-3-Copy-14" stroke="#435464" opacity="0.451370018" stroke-linecap="square" points="57 51 0 51 0 0"></polyline>
+                <polygon id="Path-2-Copy-3" fill="url(#linearGradient-1)" transform="translate(29.058824, 27.670213) scale(-1, -1) translate(-29.058824, -27.670213) " points="4.47225379 32.2346353 20.3219843 46.6595745 29.3350847 28.0788475 41.4549584 33.0513821 53.6470588 20.3918076 53.6470588 8.68085106 4.47058824 8.68085106"></polygon>
+                <polygon id="Path-2-Copy-2" fill="url(#linearGradient-2)" points="4.47058824 45.1698905 18.5639477 31.2186964 28.521427 41.0757307 39.0160428 17.4099885 53.6470588 9.76595745 53.6470588 45.5744681"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

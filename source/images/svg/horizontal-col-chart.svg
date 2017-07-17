@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="50px" viewBox="0 0 56 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 20</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Growth-Report-Editor" transform="translate(-1049.000000, -304.000000)">
+            <g id="Group-20" transform="translate(1050.000000, 304.000000)">
+                <polyline id="Path-3-Copy-12" stroke="#435464" opacity="0.451370018" stroke-linecap="square" points="55 49 0 49 0 0"></polyline>
+                <g id="Group-14" transform="translate(24.357143, 24.892000) rotate(90.000000) translate(-24.357143, -24.892000) translate(2.750000, 2.744000)">
+                    <path d="M9.44368132,0 L0.377747253,2.1857084e-15 C0.169123206,2.62285009e-15 0,0.661066491 0,1.47653333 L0,44.296 L9.82142857,44.296 L9.82142857,1.47653333 C9.82142857,0.661066491 9.65230537,0 9.44368132,0 Z" id="clip-copy-39" fill="#7DC5AD" opacity="0.5"></path>
+                    <path d="M31.8365385,16.464 L22.7706044,16.464 C22.5619803,16.464 22.3928571,16.8793604 22.3928571,17.3917333 L22.3928571,44.296 L32.2142857,44.296 L32.2142857,17.3917333 C32.2142857,16.8793604 32.0451625,16.464 31.8365385,16.464 Z" id="clip-copy-40" fill="#7DC5AD" opacity="0.800000012"></path>
+                    <path d="M20.4436813,4.704 L11.3777473,4.704 C11.1691232,4.704 11,5.11945177 11,5.6319375 L11,44.296 L20.8214286,44.296 L20.8214286,5.6319375 C20.8214286,5.11945177 20.6523054,4.704 20.4436813,4.704 Z" id="clip-copy-41" fill="#435464" opacity="0.699999988"></path>
+                    <path d="M42.8365385,4.704 L33.7706044,4.704 C33.5619803,4.704 33.3928571,5.11945177 33.3928571,5.6319375 L33.3928571,44.296 L43.2142857,44.296 L43.2142857,5.6319375 C43.2142857,5.11945177 43.0451625,4.704 42.8365385,4.704 Z" id="clip-copy-42" fill="#7DC5AD"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
