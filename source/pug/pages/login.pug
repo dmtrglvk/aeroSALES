@@ -10,30 +10,34 @@ html(lang='en')
 					+logo('aero', 'REV')
 				.login-content
 					.main-login-content.js-login-content
-						h1 Login
-						.input-row
-							input(type="text", placeholder="Username")
-						.input-row
-							input(type="password", placeholder="Password")
-						.input-row
-							.input-holder
-								input(type="checkbox", id="remember" checked)
-								label(for="remember" class="input-checkbox") Remember me
-							a(href="#" class="forgot js-forgot-password") Forgot password?
-						.input-row
-							a(href="#" class="btn btn-secondary") join
-							a(href="#" class="btn btn-primary") login
-						.copyright
-							span Powered by
-							svg
-								use(xlink:href='#logo-asselaero-big')
+						form(action="#")
+							fieldset
+								h1 Login
+								.input-row
+									input(type="text", placeholder="Username")
+								.input-row
+									input(type="password", placeholder="Password")
+								.input-row
+									.input-holder
+										input(type="checkbox", id="remember" checked)
+										label(for="remember" class="input-checkbox") Remember me
+									a(href="#" class="forgot js-forgot-password") Forgot password?
+								.input-row
+									a(href="#" class="btn btn-secondary") join
+									a(href="#" class="btn btn-primary") login
+								.copyright
+									span Powered by
+									svg
+										use(xlink:href='#logo-asselaero-big')
 					.forgot-login-content.js-forgot-content
-						a(href="#" class="btn-back js-btn-back")
-							svg
-								use(xlink:href='#back')
-							| Back
-						h1 Forgot Password?
-						.input-row
-							input(type="text", placeholder="Enter your email address")
-						.input-row
-							a(href="#" class="btn btn-primary") send instructions
+						form(action="#")
+							fieldset
+								a(href="#" class="btn-back js-btn-back")
+									svg
+										use(xlink:href='#back')
+									| Back
+								h1 Forgot Password?
+								.input-row
+									input(type="text", placeholder="Enter your email address")
+								.input-row
+									a(href="#" class="btn btn-primary") send instructions
