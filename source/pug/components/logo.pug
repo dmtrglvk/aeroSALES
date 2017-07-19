@@ -1,0 +1,7 @@
+mixin logo(logoText, logoStrongText)
+	strong.logo
+		a(href="#")
+			svg
+				use(xlink:href='#logo')
+	span.logo-text= logoText
+		span.strong= logoStrongText

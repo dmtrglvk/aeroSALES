@@ -1,0 +1,56 @@
+.login-page
+	display: flex
+	width:100%
+	height:100%
+	background: url(../images/bg-login.jpg) 50% 100% / cover no-repeat
+	box-sizing: border-box
+	padding: 0 20px
+
+.login-box
+	align-self: center
+	max-width: 458px
+	width:100%
+	margin: 0 auto
+	background: $white
+	box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.23)
+
+	.login-header
+		background: $dark-grey-blue
+		color: $white
+		display: flex
+
+.login-content
+	padding: 45px 70px 32px
+
+	h1
+		font-size: 36px
+		margin: 0 0 30px
+		color: $dark-grey-blue
+
+	.copyright
+		text-align: center
+		font-size: 12px
+		padding: 10px
+
+		svg
+			width: 91px
+			height: 10px
+
+	.btn-back
+		line-height: 19px
+		font-size: 18px
+		color: alpha($dark-grey-blue, 0.4)
+		display:inline-block
+		vertical-align: middle
+		margin: 0 0 44px
+
+		svg
+			fill: $red
+			width: 15px
+			height: 19px
+			display:inline-block
+			vertical-align: middle
+			margin: -1px 10px 0 0
+
+	.forgot-login-content
+		display: none

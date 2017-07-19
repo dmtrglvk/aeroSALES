@@ -1,16 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="56px" height="50px" viewBox="0 0 56 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 18</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Growth-Report-Editor" transform="translate(-1160.000000, -302.000000)">
-            <g id="Group-18" transform="translate(1161.000000, 302.000000)">
-                <polyline id="Path-3-Copy-13" stroke="#435464" opacity="0.451370018" stroke-linecap="square" points="55 49 0 49 0 0"></polyline>
-                <polyline id="Path-2" stroke="#7DC5AD" stroke-width="2" points="3.92857143 43.904 17.5517107 30.3105839 27.1769621 39.9148348 37.3214286 16.856 51.4642857 9.408"></polyline>
-                <polyline id="Path-2-Copy" stroke="#462E84" stroke-width="2" transform="translate(27.303571, 20.447292) scale(-1, -1) translate(-27.303571, -20.447292) " points="3.92857143 19.208 18.4642857 33.0545839 27.1769621 15.2188348 38.8928571 19.992 50.6785714 7.84"></polyline>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="50" viewBox="0 0 56 50">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#435464" d="M56 49H1V0" opacity=".451" stroke-linecap="square"/>
+    <path stroke="#7DC5AD" stroke-width="2" d="M4.93 43.904L18.55 30.31l9.625 9.605 10.144-23.06L52.464 9.41"/>
+    <path stroke="#462E84" stroke-width="2" d="M51.68 21.687L37.142 7.84 28.43 25.676l-11.716-4.773L4.93 33.055"/>
+  </g>
 </svg>

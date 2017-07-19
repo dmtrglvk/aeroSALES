@@ -1,5 +1,126 @@
+html
+	height:100%
+
 body
+	height:100%
+	font: 11px/1.2 $roboto-light
+	color: $dark-grey-blue
+
 	&>svg
 		position: absolute
 		top: -9999px
 		left: -9999px
+
+	a
+		text-decoration: none
+
+		&:hover
+			text-decoration: underline
+
+.logo
+	width:70px
+	height:70px
+	background: $red
+	margin: 0 20px 0 0
+
+	a
+		display: flex
+		width:100%
+		height:100%
+
+	svg
+		width:32px
+		height:53px
+		display: block
+		margin: 0 auto
+		align-self: center
+
+.logo-text
+	align-self: center
+	font-size: 24px
+
+	.strong
+		font-family: $roboto-medium
+
+.input-row
+	display: flex
+	margin: 0 0 25px
+	justify-content: space-between
+
+	input[type="text"]
+	input[type="password"]
+	input[type="email"]
+		width:100%
+		border: solid rgba(0, 0, 0, 0.14)
+		border-width: 0 0 1px
+		margin: 0
+		display: block
+		padding: 8px 0
+		box-sizing: border-box
+		outline: none
+		font-size: 16px
+		line-height: 1.5
+
+	.input-holder
+		align-self: 0
+		position: relative
+		font-size: 12px
+
+		input[type="checkbox"]
+		input[type="radio"]
+			opacity:0
+			position: absolute
+			top:0
+			left:0
+
+	label.input-checkbox
+		padding: 0 0 0 33px
+		position: relative
+		line-height: 20px
+		display: block
+
+		&:before
+			content: ""
+			width: 20px
+			height: 20px
+			background: #4babf6
+			position: absolute
+			top:0
+			left:0
+
+	input[type="checkbox"]
+	input[type="radio"]
+		&:checked + label
+			&:after
+				content:""
+				width:11px
+				height:5px
+				transform:rotate(-45deg)
+				border: solid $white
+				border-width: 0 0 2px 2px
+				position: absolute
+				top: 4px
+				left: 4px
+
+	&>a
+		display: block
+		align-self: center
+		color: $dark-grey-blue
+		font-size: 12px
+
+	.btn
+		font:bold 14px/52px $roboto-regular
+		color: $white
+		text-align: center
+		border-radius: 3px
+		display: block
+		text-transform: uppercase
+
+		&-primary
+			width: 215px
+			background: $red
+
+		&-secondary
+			width: calc(100% - 215px)
+			margin: 0 7px 0 0
+			background: $dark-grey-blue

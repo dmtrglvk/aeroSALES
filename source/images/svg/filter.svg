@@ -1,14 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="7px" height="8px" viewBox="0 0 7 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
-    <title>Fill 154</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="R'Ask-By-Day" transform="translate(-170.000000, -253.000000)">
-            <g id="Fill-154" transform="translate(170.000000, 253.000000)">
-                <path d="M6.7530625,0.25064969 C6.7530625,0.14289969 6.6865625,0.0531496895 6.5945625,0.0178996895 C6.5585625,0.00264968952 6.5200625,-0.00185031048 6.4815625,0.000649689519 L0.2665625,0.000649689519 C0.1970625,-0.00385031048 0.1265625,0.0181496895 0.0733125,0.0713996895 C-0.0244375,0.16964969 -0.0244375,0.32889969 0.0733125,0.42739969 L2.7530625,4.25064969 L2.7530625,7.75064969 L4.2530625,7.75064969 L4.2530625,4.25064969 L6.6660625,0.43889969 C6.7180625,0.39289969 6.7530625,0.32714969 6.7530625,0.25064969 Z"></path>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="7" height="8" viewBox="0 0 7 8">
+  <path fill-rule="evenodd" d="M6.753.25c0-.107-.066-.197-.158-.232C6.56.003 6.52-.002 6.482 0H.267C.197-.003.127.02.073.07c-.097.1-.097.26 0 .357l2.68 3.824v3.5h1.5v-3.5L6.666.44c.052-.047.087-.113.087-.19z"/>
 </svg>

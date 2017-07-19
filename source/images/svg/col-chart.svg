@@ -1,20 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="56px" height="50px" viewBox="0 0 56 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 19</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Growth-Report-Editor" transform="translate(-926.000000, -304.000000)">
-            <g id="Group-19" transform="translate(927.000000, 304.000000)">
-                <polyline id="Path-3-Copy-2" stroke="#435464" opacity="0.451370018" stroke-linecap="square" points="55 49 0 49 0 0"></polyline>
-                <g id="Group-15" transform="translate(2.750000, 1.960000)">
-                    <path d="M9.44368132,0 L0.377747253,2.1857084e-15 C0.169123206,2.62285009e-15 0,0.661066491 0,1.47653333 L0,44.296 L9.82142857,44.296 L9.82142857,1.47653333 C9.82142857,0.661066491 9.65230537,0 9.44368132,0 Z" id="clip-copy-35" fill="#7DC5AD" opacity="0.5"></path>
-                    <path d="M31.8365385,16.464 L22.7706044,16.464 C22.5619803,16.464 22.3928571,16.8793604 22.3928571,17.3917333 L22.3928571,44.296 L32.2142857,44.296 L32.2142857,17.3917333 C32.2142857,16.8793604 32.0451625,16.464 31.8365385,16.464 Z" id="clip-copy-36" fill="#7DC5AD" opacity="0.800000012"></path>
-                    <path d="M20.4436813,4.704 L11.3777473,4.704 C11.1691232,4.704 11,5.11945177 11,5.6319375 L11,44.296 L20.8214286,44.296 L20.8214286,5.6319375 C20.8214286,5.11945177 20.6523054,4.704 20.4436813,4.704 Z" id="clip-copy-37" fill="#435464" opacity="0.699999988"></path>
-                    <path d="M42.8365385,4.704 L33.7706044,4.704 C33.5619803,4.704 33.3928571,5.11945177 33.3928571,5.6319375 L33.3928571,44.296 L43.2142857,44.296 L43.2142857,5.6319375 C43.2142857,5.11945177 43.0451625,4.704 42.8365385,4.704 Z" id="clip-copy-38" fill="#7DC5AD"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="50" viewBox="0 0 56 50">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#435464" d="M56 49H1V0" opacity=".451" stroke-linecap="square"/>
+    <path fill="#7DC5AD" d="M13.194 1.96H4.128c-.21 0-.378.66-.378 1.477v42.82h9.82V3.437c0-.817-.168-1.478-.376-1.478z" opacity=".5"/>
+    <path fill="#7DC5AD" d="M35.587 18.424H26.52c-.208 0-.377.415-.377.928v26.904h9.82V19.352c0-.513-.168-.928-.376-.928z" opacity=".8"/>
+    <path fill="#435464" d="M24.194 6.664h-9.066c-.21 0-.378.415-.378.928v38.664h9.82V7.592c0-.513-.168-.928-.376-.928z" opacity=".7"/>
+    <path fill="#7DC5AD" d="M46.587 6.664H37.52c-.208 0-.377.415-.377.928v38.664h9.82V7.592c0-.513-.168-.928-.376-.928z"/>
+  </g>
 </svg>
