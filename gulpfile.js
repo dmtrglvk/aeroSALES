@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	rupture = require('rupture'),
 	copy = require('gulp-copy'),
 	poststylus = require('poststylus'),
+	imagemin = require('gulp-imagemin'),
 	browserify = require('gulp-browserify');
 
 var reload = browserSync.reload;
@@ -71,6 +72,12 @@ gulp.task('scripts', function() {
 		.pipe(reload({stream:true}));
 });
 
+gulp.task('imagemin', function() {
+	gulp.src('./source/images/*.{jpg,png,gif}')
+		.pipe(imagemin())
+		.pipe(gulp.dest('./web/images/'))
+});
+
 gulp.task('browser-sync', function() {
 	browserSync.init({
 		server: {
@@ -84,6 +91,7 @@ gulp.task('watch', function() {
 	gulp.watch('./source/stylus/**/*.styl', ['styles']);
 	gulp.watch('./source/pug/**/*.pug', ['views']);
 	gulp.watch('./source/js/**/*.js', ['scripts']);
+	gulp.watch('./source/images/*.{jpg,png,gif}', ['imagemin']);
 });
 
-gulp.task('default', ['views', 'styles', 'scripts', 'svg', 'copy', 'watch', 'browser-sync']);
+gulp.task('default', ['views', 'styles', 'scripts', 'svg', 'imagemin', 'copy', 'watch', 'browser-sync']);
