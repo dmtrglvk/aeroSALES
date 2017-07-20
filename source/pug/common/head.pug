@@ -15,9 +15,9 @@ head
 			})(window);
 			// load font (woff)
 			var ua = navigator.userAgent,
-					fontFileUrl = "/fonts/roboto-woff.css";
+					fontFileUrl = "fonts/roboto-woff.css";
 			if (supportsWoff2) {
-				fontFileUrl = "/fonts/roboto-woff2.css";
+				fontFileUrl = "fonts/roboto-woff2.css";
 			}
 			loadFont('custom_fonts', fontFileUrl);
 		})()
@@ -25,7 +25,7 @@ head
 		// Storing SVG Sprite in localStorage
 		; (function (window, document) {
 			'use strict';
-			var file = '/images/svg/svg.svg',
+			var file = 'images/svg/svg.svg',
 					revision = new Date().getTime();
 			if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
 				return true;
@@ -64,5 +64,5 @@ head
 			catch (e) { }
 		}(window, document));
 
-	link(media='screen', rel='stylesheet', href='/css/app.css')
-	script(src='/js/app.js')
+	link(media='screen', rel='stylesheet', href='css/app.css')
+	script(src='js/app.js')
