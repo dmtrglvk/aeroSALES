@@ -1,5 +1,3 @@
-# aeroSALES
-
 ## Design
 https://app.zeplin.io/project/5961e64aeeec6fabbf6b8436/dashboard
 
