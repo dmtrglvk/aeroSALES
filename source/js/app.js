@@ -3,6 +3,7 @@ var $ = require('jquery'),
 
 $(function(){
 	forgotPassword();
+	menuPanel();
 
 	// var width = 960,
 	// 	height = 500;
@@ -61,5 +62,24 @@ function forgotPassword() {
 		forgotContent.fadeOut(300, function(){
 			loginContent.fadeIn(300);
 		})
+	})
+}
+
+function menuPanel() {
+	var $parent = $('.js-menu-panel-parent'),
+		$opener = $('.js-menu-opener', $parent),
+		$menuPanel = $('.js-menu-panel', $parent);
+
+	$opener.on('click', function(e){
+		e.preventDefault();
+		if(!$parent.hasClass('opened')) {
+			$parent.addClass('opened');
+			$(this).parent().addClass('selected');
+			$(this).find('svg use').attr('xlink:href', '#back');
+		} else {
+			$parent.removeClass('opened');
+			$(this).parent().removeClass('selected');
+			$(this).find('svg use').attr('xlink:href', '#menu');
+		}
 	})
 }

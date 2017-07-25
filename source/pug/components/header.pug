@@ -1,0 +1,27 @@
+.header
+	.l-side
+		+logo('aero', 'REV')
+	.r-side
+		.search-form
+			form(action="#")
+				fieldset
+					input(type="text", placeholder="Search")
+					button(type="submit")
+						svg
+							use(xlink:href='#search')
+		.header-menu
+			ul
+				li
+					a(href="#")
+						svg
+							use(xlink:href='#envelope')
+						span.unread-messages 12
+				li
+					a(href="#")
+						svg
+							use(xlink:href='#help')
+				li
+					a(href="#")
+						| Administrator
+						svg
+							use(xlink:href='#user')

@@ -1,0 +1,114 @@
+.header
+	background: $dark-grey-blue
+	display: flex
+	color: $white
+	justify-content: space-between
+
+	.l-side
+	.r-side
+		display: flex
+
+	.r-side
+		align-items: center
+		width:70%
+
+.search-form
+	background: alpha($white, 0.89)
+	border-radius: 3px
+	padding: 0 12px
+	width:80%
+	box-sizing: border-box
+
+	input[type="text"]
+		padding: 12px 0
+		font-size: 14px
+		text-transform: uppercase
+		margin: 0
+		background: none
+		border:0
+		width: calc(100% - 22px)
+		outline: none
+
+	button[type="submit"]
+		width:19px
+		height:19px
+		margin: 0
+		padding: 0
+		overflow: visible
+		background: none
+		border: 0
+		cursor: pointer
+		position: relative
+		top:5px
+
+		svg
+			width:19px
+			height:19px
+
+.header-menu
+	ul
+		display: flex
+		align-self: center
+		margin: 0 0 0 36px
+
+		li
+			position: relative
+			padding: 0 24px
+			align-self: center
+
+			&:before
+				content:""
+				width: 1px
+				height: 50px
+				opacity: 0.4
+				position: absolute
+				top: -15px
+				left:0
+				background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff 51%, rgba(255, 255, 255, 0))
+
+			&:first-child
+				svg
+					width:28px
+					height:21px
+			&:nth-child(2)
+				svg
+					width:24px
+					height:24px
+			&:nth-child(3)
+				svg
+					display: none
+				a
+					color: $white
+					font-size: 14px
+					position: relative
+					padding: 0 15px 0 0
+					display: block
+
+					&:after
+						top: 50%
+						right: 0
+						border: solid transparent
+						content: " "
+						height: 0
+						width: 0
+						position: absolute
+						pointer-events: none
+						border-color: rgba(170, 178, 183, 0)
+						border-top-color: #aab2b7
+						border-width: 4px
+						margin: -2px 0 0 -4px
+
+			svg
+				fill: $white
+				display: block
+
+		.unread-messages
+			position: absolute
+			top: -10px
+			right: 15px
+			color: $white
+			background: $red
+			font-size: 10px
+			font-weight: bold
+			padding: 1px 6px
+			border-radius:7.5px

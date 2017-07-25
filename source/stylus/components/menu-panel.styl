@@ -1,0 +1,99 @@
+.menu-panel
+	height: 100%
+	position: absolute
+	left:0
+	width:70px
+
+.menu-panel__list
+	background: #f9f9fa
+	min-height: 100%
+	z-index: 2
+	position: relative
+
+	li
+		a
+			display: block
+			padding: 23px
+
+			.opened &
+				padding: 23px 24px
+				margin: 0 -1px
+
+		&:first-child
+			&.selected
+				svg
+					fill: $red
+
+		&:nth-child(2)
+			svg
+				stroke: #435464
+				stroke-width: 1.5
+			&:hover
+				svg
+					stroke: $dark-sky-blue
+
+		&:hover
+		&.selected
+			a
+				background: $white
+			svg
+				fill: $dark-sky-blue
+
+	svg
+		width:23px
+		height:24px
+		fill: #435464
+
+.menu-panel__block
+	position: absolute
+	top: 0
+	left:-140px
+	height: 100%
+	width:210px
+	transition: left 0.3s ease
+
+	&__holder
+		box-shadow: 2px 2px 4px 0 rgba(197, 197, 197, 0.5)
+		background: $white
+		min-height: 100%
+		border-left: 1px solid #f2f3f4
+		box-sizing: border-box
+		padding: 26px 27px 65px
+		position: relative
+
+	.opened &
+		left: 70px
+
+	h2
+	h3
+		font: 18px $roboto-medium
+		margin: 0 0 20px
+
+	h3
+		font-size: 14px
+		margin: 0 0 10px
+
+	ul
+		font-size: 13px
+		padding: 0 0 45px
+
+		li
+			margin: 0 0 15px
+
+		a
+			color: $dark-grey-blue
+
+	.copyright
+		position: absolute
+		bottom: 0
+		left: 27px
+		padding: 0 0 20px
+		width:calc(100% - 54px)
+
+		svg
+			width: 78%
+			height: 35px
+			display: block
+
+		span
+			font-size: 10px

@@ -10,6 +10,8 @@ var gulp = require('gulp'),
 	copy = require('gulp-copy'),
 	poststylus = require('poststylus'),
 	imagemin = require('gulp-imagemin'),
+	cssmin = require('gulp-cssmin'),
+	minifyjs = require('gulp-js-minify'),
 	browserify = require('gulp-browserify');
 
 var reload = browserSync.reload;
@@ -36,6 +38,7 @@ gulp.task('styles', function () {
 		.pipe(stylus({
 			use: [poststylus([autoprefixer({ browsers: ['last 5 versions'] })]), rupture()]
 		}))
+		.pipe(cssmin())
 		.pipe(gulp.dest('./web/css/'))
 		.pipe(reload({stream:true}));
 });

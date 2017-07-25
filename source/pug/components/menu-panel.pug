@@ -1,0 +1,37 @@
+- var menuItems = ['Daily Growth','Evolution','Seat Factor by Day','Seat Factor by Sector','Seat Factor by Flight','R’ASK by Day','Day View','Route View','Sector View','Sector Growth','Pax & YLD By Station','ACT vs BGT','OnD’s']
+
+.menu-panel.js-menu-panel-parent
+	ul.menu-panel__list
+		li
+			a(href="#" class="js-menu-opener")
+				svg
+					use(xlink:href='#menu')
+		li
+			a(href="#")
+				svg
+					use(xlink:href='#dashboard')
+		li
+			a(href="#")
+				svg
+					use(xlink:href='#document')
+		li
+			a(href="#")
+				svg
+					use(xlink:href='#settings')
+
+	.menu-panel__block.js-menu-block
+		.menu-panel__block__holder
+			h2 Reports
+			ul
+				each item in menuItems
+					li
+						a(href="#")= item
+			h3 My Queries
+			ul
+				li
+					a(href="#") My New Report
+
+			.copyright
+				svg
+					use(xlink:href='#logo-accelaero-big')
+				span &copy; 2018 All Rights Reserved

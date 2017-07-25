@@ -1,7 +1,9 @@
+include ../components/logo.pug
+
 doctype html
 html(lang='en')
-	include ../common/head
+	include ../common/head.pug
 	body
-		h1 Hello
-		.chart-box
-			svg(class="chart")
+		.page
+			include ../components/menu-panel.pug
+			include ../components/header.pug
