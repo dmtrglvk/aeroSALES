@@ -169,3 +169,29 @@ body
 
 	+below($desktop)
 		padding-top: 65px
+
+.bar-chart
+	line
+		display: none
+	text
+		fill: $dark-grey-blue
+		font-size: 12px
+	.domain
+		stroke: alpha(#435464, 0.1)
+		stroke-width:2
+	.sector
+		.bar
+			border-radius: 3px 3px 0 0
+		g>g
+			&:nth-child(1)
+				.bar
+					&:nth-child(1)
+						fill: #c2e2d6
+					&:nth-child(2)
+						fill: #a9d6c4
+			&:nth-child(2)
+				.bar
+					&:nth-child(1)
+						fill: #a196c0
+					&:nth-child(2)
+						fill: #7c6da7

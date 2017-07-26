@@ -63,6 +63,11 @@ gulp.task('copy', function () {
 		.pipe(gulp.dest('./web/fonts/'));
 });
 
+gulp.task('copy-data', function () {
+	gulp.src('./source/js/data/*.csv')
+		.pipe(gulp.dest('./web/js/data/'));
+});
+
 gulp.task('scripts', function() {
 	// Single entry point to browserify
 	gulp.src('./source/js/app.js')
@@ -94,6 +99,7 @@ gulp.task('watch', function() {
 	gulp.watch('./source/pug/**/*.pug', ['views']);
 	gulp.watch('./source/js/**/*.js', ['scripts']);
 	gulp.watch('./source/images/*.{jpg,png,gif}', ['imagemin']);
+	gulp.watch('./source/js/data/*.csv', ['copy-data']);
 });
 
-gulp.task('default', ['views', 'styles', 'scripts', 'svg', 'imagemin', 'copy', 'watch', 'browser-sync']);
+gulp.task('default', ['views', 'styles', 'scripts', 'svg', 'imagemin', 'copy', 'copy-data', 'watch', 'browser-sync']);
