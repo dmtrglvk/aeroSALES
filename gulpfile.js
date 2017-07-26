@@ -11,7 +11,6 @@ var gulp = require('gulp'),
 	poststylus = require('poststylus'),
 	imagemin = require('gulp-imagemin'),
 	cssmin = require('gulp-cssmin'),
-	minifyjs = require('gulp-js-minify'),
 	browserify = require('gulp-browserify');
 
 var reload = browserSync.reload;
