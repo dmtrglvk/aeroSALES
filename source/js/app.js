@@ -1,9 +1,11 @@
 var $ = require('jquery'),
-	d3 = require("d3");
+	d3 = require("d3"),
+	selectpicker = require('bootstrap-select');
 
 $(function(){
 	forgotPassword();
 	menuPanel();
+	$('select').selectpicker();
 
 	// var width = 960,
 	// 	height = 500;
