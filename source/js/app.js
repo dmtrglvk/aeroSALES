@@ -68,7 +68,7 @@ function forgotPassword() {
 function menuPanel() {
 	var $parent = $('.js-menu-panel-parent'),
 		$opener = $('.js-menu-opener', $parent),
-		$menuPanel = $('.js-menu-panel', $parent);
+		$pageOverlay = $('.page-overlay');
 
 	$opener.on('click', function(e){
 		e.preventDefault();
@@ -76,10 +76,18 @@ function menuPanel() {
 			$parent.addClass('opened');
 			$(this).parent().addClass('selected');
 			$(this).find('svg use').attr('xlink:href', '#back');
+			$('body').addClass('menu-open');
 		} else {
 			$parent.removeClass('opened');
 			$(this).parent().removeClass('selected');
 			$(this).find('svg use').attr('xlink:href', '#menu');
+			$('body').removeClass('menu-open');
 		}
+	});
+	$pageOverlay.on('click', function(){
+		$parent.removeClass('opened');
+		$opener.parent().removeClass('selected');
+		$opener.find('svg use').attr('xlink:href', '#menu');
+		$('body').removeClass('menu-open');
 	})
 }
