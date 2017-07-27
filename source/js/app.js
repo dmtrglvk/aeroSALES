@@ -5,7 +5,7 @@ var $ = require('jquery'),
 $(function(){
 	forgotPassword();
 	menuPanel();
-	groupBarChart('.js-bar-chart', '/js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+	groupBarChart('.js-bar-chart', './js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
 
 	$('select').selectpicker();
 
