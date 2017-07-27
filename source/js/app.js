@@ -39,14 +39,18 @@ $(function(){
 
 		x0.domain(data.map(function(d) { return d.Group; }));
 		x1.domain(keys).rangeRound([0, x0.bandwidth()]);
-		y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
+		y.domain([0, d3.max(data, function(d) {
+			return d3.max(keys, function(key) { return d[key]; });
+		})]).nice();
 
 		g.attr('class', 'sector')
 			.append("g")
 			.selectAll("g")
 			.data(data)
 			.enter().append("g")
-			.attr("transform", function(d) { return "translate(" + x0(d.Group) + ",0)"; })
+			.attr("transform", function(d) {
+				return "translate(" + x0(d.Group) + ",0)";
+			})
 			.selectAll("rect")
 			.data(function(d) {
 				return keys.map(function(key) {
@@ -56,17 +60,45 @@ $(function(){
 					};
 				});
 			})
-			.enter().append("rect")
+			.enter()
+			.append("rect")
 			.attr("x", function(d) {
 				return x1(d.key);
 			})
 			.attr("y", function(d) { return y(d.value); })
 			.attr("width", x1.bandwidth())
-			.attr("height", function(d) { return height - y(d.value); })
+			.attr("height", function(d) {
+				return height - y(d.value);
+			})
 			.attr('class', 'bar')
-			.append("text")
-			.attr("class", "label")
-			.attr("dy", ".35em") //vertical align middle
+
+		g
+			.append("g")
+			.selectAll("g")
+			.data(data)
+			.enter().append("g")
+			.attr("transform", function(d) {
+				return "translate(" + x0(d.Group) + ",0)";
+			})
+			.selectAll("text")
+			.data(function(d) {
+				return keys.map(function(key) {
+					return {
+						key: key,
+						value: d[key]
+					};
+				});
+			})
+			.enter()
+			.append('text')
+			.attr('class', 'label')
+			.attr("x", function(d) {
+				return x1(d.key) + (x1.bandwidth()/4);
+			})
+			.attr("y", function(d) {
+				return y(d.value) - 5;
+			})
+			.style("text-anchor", "left")
 			.text(function(d){
 				return d.value;
 			})
@@ -79,6 +111,7 @@ $(function(){
 		g.append("g")
 			.attr("class", "axis")
 			.call(d3.axisLeft(y))
+
 	});
 
 });
