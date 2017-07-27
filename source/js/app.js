@@ -29,6 +29,8 @@ $(function(){
 	var y = d3.scaleLinear()
 		.rangeRound([height, 0]);
 
+	var barColors = ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7'];
+
 	d3.csv("/js/data/data.csv", function(d, i, columns) {
 		for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
 		return d;
@@ -63,6 +65,10 @@ $(function(){
 			.enter()
 			.append("rect")
 			.attr("x", function(d) {
+
+				var color = barColors.shift();
+				$(this).attr('fill', color);
+
 				return x1(d.key);
 			})
 			.attr("y", function(d) { return y(d.value); })
@@ -70,7 +76,7 @@ $(function(){
 			.attr("height", function(d) {
 				return height - y(d.value);
 			})
-			.attr('class', 'bar')
+			.attr('class', 'bar');
 
 		g
 			.append("g")
@@ -93,15 +99,15 @@ $(function(){
 			.append('text')
 			.attr('class', 'label')
 			.attr("x", function(d) {
-				return x1(d.key) + (x1.bandwidth()/4);
+				return x1(d.key) + x1.bandwidth()/2;
 			})
 			.attr("y", function(d) {
 				return y(d.value) - 5;
 			})
-			.style("text-anchor", "left")
 			.text(function(d){
 				return d.value;
 			})
+			.attr("text-anchor", "middle")
 
 		g.append("g")
 			.attr("class", "axis")
