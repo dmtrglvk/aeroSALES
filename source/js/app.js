@@ -5,8 +5,10 @@ var $ = require('jquery'),
 $(function(){
 	forgotPassword();
 	menuPanel();
+	groupBarChart('.js-bar-chart', '/js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+
 	$('select').selectpicker();
-	groupBarChart();
+
 });
 
 
@@ -57,8 +59,8 @@ function menuPanel() {
 	})
 }
 
-function groupBarChart() {
-	var svg = d3.select("svg.bar-chart"),
+function groupBarChart(element, data, colors) {
+	var svg = d3.select(element),
 		margin = {
 			top: 20,
 			right: 20,
@@ -80,9 +82,9 @@ function groupBarChart() {
 	var y = d3.scaleLinear()
 		.rangeRound([height, 0]);
 
-	var barColors = ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7'];
+	var barColors = colors;
 
-	d3.csv("/js/data/data.csv", function(d, i, columns) {
+	d3.csv(data, function(d, i, columns) {
 		for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
 		return d;
 	}, function(error, data) {
@@ -158,7 +160,7 @@ function groupBarChart() {
 			.text(function(d){
 				return d.value;
 			})
-			.attr("text-anchor", "middle")
+			.attr("text-anchor", "middle");
 
 		g.append("g")
 			.attr("class", "axis")
