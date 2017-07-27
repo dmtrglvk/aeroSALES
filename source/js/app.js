@@ -6,7 +6,58 @@ $(function(){
 	forgotPassword();
 	menuPanel();
 	$('select').selectpicker();
+	groupBarChart();
+});
 
+
+function forgotPassword() {
+	var forgotLink = $('.js-forgot-password'),
+		loginContent = $('.js-login-content'),
+		forgotContent = $('.js-forgot-content'),
+		backBtn = $('.js-btn-back');
+
+	forgotLink.on('click', function(e){
+		e.preventDefault();
+		loginContent.fadeOut(300, function(){
+			forgotContent.fadeIn(300);
+		})
+	});
+	backBtn.on('click', function(e){
+		e.preventDefault();
+		forgotContent.fadeOut(300, function(){
+			loginContent.fadeIn(300);
+		})
+	})
+}
+
+function menuPanel() {
+	var $parent = $('.js-menu-panel-parent'),
+		$opener = $('.js-menu-opener', $parent),
+		$pageOverlay = $('.page-overlay');
+
+	$opener.on('click', function(e){
+		e.preventDefault();
+		if(!$parent.hasClass('opened')) {
+			$parent.addClass('opened');
+			$(this).parent().addClass('selected');
+			$(this).find('svg use').attr('xlink:href', '#back');
+			$('body').addClass('menu-open');
+		} else {
+			$parent.removeClass('opened');
+			$(this).parent().removeClass('selected');
+			$(this).find('svg use').attr('xlink:href', '#menu');
+			$('body').removeClass('menu-open');
+		}
+	});
+	$pageOverlay.on('click', function(){
+		$parent.removeClass('opened');
+		$opener.parent().removeClass('selected');
+		$opener.find('svg use').attr('xlink:href', '#menu');
+		$('body').removeClass('menu-open');
+	})
+}
+
+function groupBarChart() {
 	var svg = d3.select("svg.bar-chart"),
 		margin = {
 			top: 20,
@@ -119,53 +170,4 @@ $(function(){
 			.call(d3.axisLeft(y))
 
 	});
-
-});
-
-
-function forgotPassword() {
-	var forgotLink = $('.js-forgot-password'),
-		loginContent = $('.js-login-content'),
-		forgotContent = $('.js-forgot-content'),
-		backBtn = $('.js-btn-back');
-
-	forgotLink.on('click', function(e){
-		e.preventDefault();
-		loginContent.fadeOut(300, function(){
-			forgotContent.fadeIn(300);
-		})
-	});
-	backBtn.on('click', function(e){
-		e.preventDefault();
-		forgotContent.fadeOut(300, function(){
-			loginContent.fadeIn(300);
-		})
-	})
-}
-
-function menuPanel() {
-	var $parent = $('.js-menu-panel-parent'),
-		$opener = $('.js-menu-opener', $parent),
-		$pageOverlay = $('.page-overlay');
-
-	$opener.on('click', function(e){
-		e.preventDefault();
-		if(!$parent.hasClass('opened')) {
-			$parent.addClass('opened');
-			$(this).parent().addClass('selected');
-			$(this).find('svg use').attr('xlink:href', '#back');
-			$('body').addClass('menu-open');
-		} else {
-			$parent.removeClass('opened');
-			$(this).parent().removeClass('selected');
-			$(this).find('svg use').attr('xlink:href', '#menu');
-			$('body').removeClass('menu-open');
-		}
-	});
-	$pageOverlay.on('click', function(){
-		$parent.removeClass('opened');
-		$opener.parent().removeClass('selected');
-		$opener.find('svg use').attr('xlink:href', '#menu');
-		$('body').removeClass('menu-open');
-	})
 }
