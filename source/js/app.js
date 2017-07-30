@@ -5,11 +5,15 @@ var $ = require('jquery'),
 $(function(){
 	forgotPassword();
 	menuPanel();
-	groupBarChart('.js-bar-chart', './js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+	callCharts();
 
 	$('select').selectpicker();
 
 });
+
+function callCharts() {
+	groupBarChart('.js-bar-chart', './js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+}
 
 var waitForFinalEvent = (function() {
 	var timers = {};
@@ -27,8 +31,11 @@ var waitForFinalEvent = (function() {
 // Usage
 $(window).resize(function() {
 	waitForFinalEvent(function() {
-		$('.js-bar-chart svg').remove();
-		groupBarChart('.js-bar-chart', './js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+
+		$('.d3chart svg').remove();
+
+		callCharts();
+
 	}, 2);
 });
 
@@ -85,7 +92,7 @@ function groupBarChart(element, data, colors) {
 			.attr('height', $(element).height()),
 		margin = {
 			top: 20,
-			right: 20,
+			right: 10,
 			bottom: 30,
 			left: 8
 		},

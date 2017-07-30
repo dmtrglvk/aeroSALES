@@ -5,6 +5,7 @@ body
 	height:100%
 	font: 11px/1.2 $roboto-light
 	color: $dark-grey-blue
+	background: alpha(#16467d, 0.07)
 
 	&>svg
 		position: absolute
@@ -162,14 +163,10 @@ body
 
 .content
 	padding: 25px
-	display: flex
-	min-height:calc(100vh - 70px)
-	flex-direction:column
 	box-sizing: border-box
-	background: alpha(#16467d, 0.07)
 
 	+below($desktop)
-		padding-top: 65px
+		padding-top: 0
 
 .bar-chart
 	overflow: hidden
