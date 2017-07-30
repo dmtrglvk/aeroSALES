@@ -11,6 +11,26 @@ $(function(){
 
 });
 
+var waitForFinalEvent = (function() {
+	var timers = {};
+	return function(callback, ms, uniqueId) {
+		if (!uniqueId) {
+			uniqueId = "Don't call this twice without a uniqueId";
+		}
+		if (timers[uniqueId]) {
+			clearTimeout(timers[uniqueId]);
+		}
+		timers[uniqueId] = setTimeout(callback, ms);
+	};
+})();
+
+// Usage
+$(window).resize(function() {
+	waitForFinalEvent(function() {
+		$('.js-bar-chart svg').remove();
+		groupBarChart('.js-bar-chart', './js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+	}, 2);
+});
 
 function forgotPassword() {
 	var forgotLink = $('.js-forgot-password'),
@@ -60,7 +80,9 @@ function menuPanel() {
 }
 
 function groupBarChart(element, data, colors) {
-	var svg = d3.select(element),
+	var svg = d3.select(element).append('svg')
+			.attr('width', $(element).width())
+			.attr('height', $(element).height()),
 		margin = {
 			top: 20,
 			right: 20,

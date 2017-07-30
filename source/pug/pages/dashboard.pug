@@ -9,7 +9,6 @@ html(lang='en')
 
 			include ../components/menu-panel.pug
 			include ../components/header.pug
-			include ../components/breadcrumbs.pug
 
 			.content
 				select(data-live-search="true" title="hi there")
@@ -17,4 +16,4 @@ html(lang='en')
 					option Ketchup
 					option Barbecue
 
-				svg(width="330", height="144" class="bar-chart js-bar-chart")
+				.bar-chart.js-bar-chart
