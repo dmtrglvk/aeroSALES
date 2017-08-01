@@ -2,6 +2,9 @@ var $ = require('jquery'),
 	d3 = require("d3"),
 	selectpicker = require('bootstrap-select');
 
+global.jQuery = require('jquery');
+require('bootstrap');
+
 $(function(){
 	forgotPassword();
 	menuPanel();

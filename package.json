@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dmtrglvk/aeroSALES#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "bootstrap": "^3.3.7",
     "bootstrap-select": "^1.12.4",
     "browser-sync": "^2.18.12",
     "d3": "^4.10.0",
