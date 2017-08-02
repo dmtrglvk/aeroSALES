@@ -1,0 +1,63 @@
+.btn-tools
+	.control-panel &
+		margin-left: 20px
+		font: 14px/18px $roboto-light
+	&:after
+		display: block
+		clear: both
+		content: ''
+	li
+		float: left
+		background: rgba(67, 84, 100, 0.6)
+		border-left: 1px solid #fff
+		letter-spacing: 0.1px
+		&:first-child
+			border-bottom-left-radius: 3px
+			border-top-left-radius: 3px
+			border-left: 0
+		&:last-child
+			border-bottom-right-radius: 3px
+			border-top-right-radius: 3px
+		&.active
+			background: $dark-sky-blue
+			font-family: $roboto-regular
+		a
+			display: block
+			height: 100%
+			color: #fff
+			padding: 8px 9px 7px
+			box-sizing: border-box
+			&:hover
+				text-decoration: none
+
+button[class*="-btn"]
+	font: 14px/18px $roboto-regular
+	border: 0
+	color: #fff
+	border-radius: 3px
+	padding: 8px 10px 7px
+	margin: 0 0 0 20px
+	cursor: pointer
+	svg
+		fill: #fff
+		display: inline-block
+		margin: 0 8px 0 0
+		vertical-align: middle
+
+.dark-grey-btn
+	background: #435464
+	&.customise
+		svg
+			width: 16px
+			height: 16px
+	&.export
+		svg
+			width: 16px
+			height: 14px
+
+.blue-btn
+	background: $dark-sky-blue
+	&.upload
+		svg
+			width: 19px
+			height: 14px

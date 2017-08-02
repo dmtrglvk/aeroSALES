@@ -1,0 +1,107 @@
+.bootstrap-select
+	position: relative
+	margin-left: 20px
+	select
+		position: absolute!important
+		bottom: 0
+		left: 50%
+		display: block!important
+		width: .5px!important
+		height: 100%!important
+		padding: 0!important
+		opacity: 0!important
+		border: none
+
+	.dropdown-toggle
+		background: none
+		border: 0
+		border-bottom: 1px solid rgba(0, 0, 0, 0.14)
+		outline: none
+		color: #38414b
+		font: 14px/1.71 $roboto-regular
+		padding: 2px 20px 2px 0
+		position: relative
+		cursor: pointer
+
+		.caret
+			width: 8px
+			height: 8px
+			transform: rotate(-45deg)
+			border-left: 1px solid #607d8b
+			border-bottom: 1px solid #607d8b
+			display: block
+			position: absolute
+			right: 3px
+			bottom: 12px
+
+.dropdown-menu
+	position: absolute
+	top: 100%
+	right: 0
+	z-index: 1000
+	display: none
+	padding: 5px 0
+	font-size: 14px
+	text-align: left
+	list-style: none
+	background-color: #fff
+	-webkit-background-clip: padding-box
+	background-clip: padding-box
+	border-radius: 4px
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175)
+	box-shadow: 0 6px 12px rgba(0,0,0,.175)
+	li
+		font: 12px/1.17 $roboto-medium
+		text-align: center
+		padding: 10px
+		&:hover
+			background: rgba(94, 161, 139, 0.2)
+	.show-tick &
+		li
+			color: #435464
+			margin-bottom: 20px
+			cursor: pointer
+			text-align: left
+			padding: 0 20px
+			&:hover
+				background: none
+			a
+				position: relative
+				display: inline-block
+				padding: 0 0 0 30px
+				&:before
+					position: absolute
+					left: 0
+					top: -2px
+					width: 14px
+					height: 14px
+					border-radius: 2px
+					border: 1px solid $dark-sky-blue
+					content: ''
+				&:after
+					width: 9px
+					height: 4px
+					border-left: 1px solid #ffffff
+					border-bottom: 1px solid #ffffff
+					transform: rotate(-45deg)
+					position: absolute
+					left: 3px
+					top: 2px
+			&.selected
+				a
+					&:before
+						background: $dark-sky-blue
+					&:after
+						content: ''
+
+	&.inner
+		position: static
+		float: none
+		border: 0
+		padding: 0
+		margin: 0
+		border-radius: 0
+		box-shadow: none
+
+	.open &
+		display block
