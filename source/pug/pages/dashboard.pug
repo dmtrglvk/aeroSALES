@@ -14,37 +14,39 @@ html(lang='en')
 				.control-panel
 					h1.title Dashboard
 					.r-bar
-						select.selectpicker(title="G9" multiple)
-							option G9
-							option 30
-							option E5
-							option 9P
-						select.selectpicker(title="Last 24 Hours")
-							option Last 24 Hours
-							option Last 24 Hours
-							option Last 24 Hours
-						ul.btn-tools
-							li.active
-								a(href="#") Day
-							li
-								a(href="#") Route
-							li
-								a(href="#") Region
-						button.dark-grey-btn.customise
-							svg
-								use(xlink:href='#tuning')
-							| Customise
-						select.selectpicker(title="My Queries")
-							option My New Sales Report
-							option My New Report
-						button.dark-grey-btn.export
-							svg
-								use(xlink:href='#exit')
-							| Export
-						button.blue-btn.upload
-							svg
-								use(xlink:href='#upload')
-							| Upload RAW Data
+						.temp-wrap
+							select.selectpicker(multiple)
+								option G9
+								option.seleted 30
+								option E5
+								option 9P
+							select.selectpicker(title="Last 24 Hours")
+								option Last 24 Hours
+								option Last 24 Hours
+								option Last 24 Hours
+							ul.btn-tools
+								li.active
+									a(href="#") Day
+								li
+									a(href="#") Route
+								li
+									a(href="#") Region
+						.temp-wrap
+							button.dark-grey-btn.customise
+								svg
+									use(xlink:href='#tuning')
+								| Customise
+							select.selectpicker(title="My Queries")
+								option My New Sales Report
+								option My New Report
+							button.dark-grey-btn.export
+								svg
+									use(xlink:href='#exit')
+								| Export
+							button.blue-btn.upload
+								svg
+									use(xlink:href='#upload')
+								| Upload RAW Data
 
 				.d3chart.bar-chart.js-bar-chart
 				.d3chart.bar-chart.js-bar-chart2
