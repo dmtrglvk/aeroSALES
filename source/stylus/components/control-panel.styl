@@ -7,6 +7,7 @@
 	+below($desktop)
 		display: block
 		margin: 0 -25px
+		padding: 7px 20px
 
 	.title
 		font-family: $roboto-light
@@ -14,9 +15,28 @@
 		color: #344252
 		+below($desktop)
 			text-align: center
+			margin-bottom: 30px
 
 	.r-bar
 		display: flex
 		max-width: 85%
 		justify-content: flex-end
 		align-items: center
+		+below($desktop)
+			max-width: 100%
+			justify-content: center
+			flex-wrap: wrap
+		+below($mobile)
+			display: block
+			holder()
+
+		.temp-wrap
+			display: flex
+			align-items: center
+			+below($desktop)
+				margin-bottom: 15px
+			+below($medium)
+				width: 100%
+				margin-left: -20px
+			+below($mobile)
+				display: block
