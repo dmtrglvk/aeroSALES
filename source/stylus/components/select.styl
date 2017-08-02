@@ -2,7 +2,17 @@
 	position: relative
 	margin-left: 20px
 	+below($mobile)
-		margin: 0px
+		margin: 0
+
+	&:after
+		position: absolute
+		content:""
+		background: $white
+		height:5px
+		width:calc(100% + 12px)
+		bottom:0
+		left:-12px
+		z-index: 19
 
 	select
 		position: absolute!important
@@ -14,6 +24,9 @@
 		padding: 0!important
 		opacity: 0!important
 		border: none
+
+	&.open
+		z-index:20
 
 	.dropdown-toggle
 		background: #fff
@@ -27,7 +40,6 @@
 		cursor: pointer
 		max-width: 130px
 		box-sizing: border-box
-		overflow: hidden
 		white-space: nowrap
 		border-top-left-radius: 3px
 		border-top-right-radius: 3px
@@ -38,15 +50,15 @@
 			overflow: hidden
 			white-space: nowrap
 			text-overflow: ellipsis
-			max-width: 105px
+			max-width: 100px
 			box-sizing: border-box
 			.show-tick&
-				max-width: 60px
+				max-width: 100px
 			.open&
 				border-bottom-color: transparent
 		.open&
 			color: $dark-sky-blue
-			box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.1)
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12)
 			padding-left: 12px
 			margin-left: -12px
 		.show-tick&
@@ -70,9 +82,9 @@
 	position: absolute
 	top: calc(100% - 2px)
 	right: 0
-	z-index: 17
+	z-index: 19
 	display: none
-	width: 163px
+	min-width: 100%
 	font-size: 14px
 	text-align: left
 	list-style: none
@@ -80,12 +92,22 @@
 	background-clip: padding-box
 	border-radius: 4px
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12)
+
+	&[role="combobox"]
+		min-width: calc(100% + 12px)
+
 	li
 		font: 12px/1.17 $roboto-medium
 		text-align: center
-		padding: 10px
 		a
+			display: block
+			padding: 10px
 			outline: none
+			white-space: nowrap
+			&:hover
+				text-decoration: none
+			.text
+				cursor: pointer
 		&:hover
 			background: rgba(94, 161, 139, 0.2)
 	.show-tick &
