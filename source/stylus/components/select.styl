@@ -123,7 +123,6 @@
 				background: none
 			a
 				position: relative
-				display: inline-block
 				padding: 0 0 0 30px
 				&:before
 					position: absolute
@@ -155,10 +154,15 @@
 				position: static
 				width: 100%
 				box-shadow: none
+				min-height:20px !important
 				&.inner
 					display: flex
 					justify-content: space-between
 					margin-bottom: 24px
+
+					+below($mobile)
+						margin: 0
+
 					li
 						margin: 0
 						padding: 0
