@@ -1,5 +1,3 @@
-include ../components/logo.pug
-
 doctype html
 html(lang='en')
 	include ../common/head.pug
@@ -47,6 +45,50 @@ html(lang='en')
 								svg
 									use(xlink:href='#upload')
 								| Upload RAW Data
-
-				.d3chart.bar-chart.js-bar-chart
-				.d3chart.bar-chart.js-bar-chart2
+				.boxes-wrap
+					.box
+						.ttl-row
+							h4.sub-ttl Growth
+							.tools-box
+								a(href="#")
+									svg
+										use(xlink:href='#settings')
+								a(href="#")
+									svg
+										use(xlink:href='#fullscreen')
+						.d3chart.bar-chart.js-bar-chart
+						.d3chart.bar-chart.js-bar-chart2
+					.box
+						.ttl-row
+							h4.sub-ttl Passenger
+							ul.btn-tools
+								li.active
+									a(href="#") Day
+								li
+									a(href="#") Route
+								li
+									a(href="#") Region
+							.tools-box
+								a(href="#")
+									svg
+										use(xlink:href='#settings')
+								a(href="#")
+									svg
+										use(xlink:href='#fullscreen')
+					.box
+						.ttl-row
+							h4.sub-ttl Passenger
+							ul.btn-tools
+								li.active
+									a(href="#") Day
+								li
+									a(href="#") Route
+								li
+									a(href="#") Region
+							.tools-box
+								a(href="#")
+									svg
+										use(xlink:href='#settings')
+								a(href="#")
+									svg
+										use(xlink:href='#fullscreen')
