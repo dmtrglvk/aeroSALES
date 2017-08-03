@@ -1,3 +1,5 @@
+include ../components/logo.pug
+
 doctype html
 html(lang='en')
 	include ../common/head.pug
@@ -12,16 +14,16 @@ html(lang='en')
 				.control-panel
 					h1.title Dashboard
 					.r-bar
+						select.selectpicker(multiple)
+							option G9
+							option(selected="selected") 30
+							option E5
+							option 9P
 						.temp-wrap
-							select.selectpicker(multiple)
-								option G9
-								option.seleted 30
-								option E5
-								option 9P
 							select.selectpicker(title="Last 24 Hours")
 								option Last 24 Hours
-								option Last 24 Hours
-								option Last 24 Hours
+								option Last 12 Hours
+								option Last 8 Hours
 							ul.btn-tools
 								li.active
 									a(href="#") Day
@@ -29,7 +31,6 @@ html(lang='en')
 									a(href="#") Route
 								li
 									a(href="#") Region
-						.temp-wrap
 							button.dark-grey-btn.customise
 								svg
 									use(xlink:href='#tuning')
@@ -92,3 +93,6 @@ html(lang='en')
 								a(href="#")
 									svg
 										use(xlink:href='#fullscreen')
+
+
+				.d3chart.bar-chart.js-bar-chart

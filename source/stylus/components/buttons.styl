@@ -1,8 +1,11 @@
 .btn-tools
 	font: 9px/20px $roboto-light
+	margin: 0 35px 0 0
 	.control-panel &
 		font: 14px/32px $roboto-light
 		margin:0 0 0 10px
+		+below($mobile)
+			margin: 0 10px 0 0
 	&:after
 		display: block
 		clear: both
@@ -39,6 +42,8 @@ button[class*="-btn"]
 	padding: 8px 10px 7px
 	margin: 0 0 0 17px
 	cursor: pointer
+	+below($mobile)
+		margin: 0 20px 0 0
 	svg
 		fill: #fff
 		display: inline-block
