@@ -86,28 +86,28 @@ function callCharts() {
 	groupBarChart('.js-yeild-chart', './js/data/data-revenue.csv', ['#d9f3c5', '#94af80', '#3ab894', '#55c8a6']);
 }
 
-var waitForFinalEvent = (function() {
-	var timers = {};
-	return function(callback, ms, uniqueId) {
-		if (!uniqueId) {
-			uniqueId = "Don't call this twice without a uniqueId";
-		}
-		if (timers[uniqueId]) {
-			clearTimeout(timers[uniqueId]);
-		}
-		timers[uniqueId] = setTimeout(callback, ms);
-	};
-})();
-
-jQuery(window).resize(function() {
-	waitForFinalEvent(function() {
-
-		jQuery('.d3chart svg').remove();
-
-		callCharts();
-
-	}, 2);
-});
+// var waitForFinalEvent = (function() {
+// 	var timers = {};
+// 	return function(callback, ms, uniqueId) {
+// 		if (!uniqueId) {
+// 			uniqueId = "Don't call this twice without a uniqueId";
+// 		}
+// 		if (timers[uniqueId]) {
+// 			clearTimeout(timers[uniqueId]);
+// 		}
+// 		timers[uniqueId] = setTimeout(callback, ms);
+// 	};
+// })();
+//
+// jQuery(window).resize(function() {
+// 	waitForFinalEvent(function() {
+//
+// 		jQuery('.d3chart svg').remove();
+//
+// 		callCharts();
+//
+// 	}, 2);
+// });
 
 function forgotPassword() {
 	var forgotLink = jQuery('.js-forgot-password'),
