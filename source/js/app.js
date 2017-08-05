@@ -200,7 +200,7 @@ function groupBarChart(element, data, colors) {
 		margin = {
 			top: 20,
 			right: 10,
-			bottom: 30,
+			bottom: 20,
 			left: 8
 		},
 		width = +svg.attr("width") - margin.left - margin.right,

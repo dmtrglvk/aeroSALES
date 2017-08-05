@@ -5,9 +5,7 @@
 	padding: 21px 25px
 	+below($desktop)
 		display: block
-		padding: 7px 20px
-	+below($mobile)
-		margin: 0 0 20px
+		padding: 7px 0 20px
 
 	.title
 		font-size: 30px
@@ -22,11 +20,27 @@
 		justify-content: flex-end
 		align-items: center
 		+below($desktop)
-			max-width: 100%
-			justify-content: center
-			flex-wrap: wrap
+			width:100%
+			display: block
+			max-width: 9999px
+
+			&>.bootstrap-select
+				margin: 0
+
+				&>.dropdown-menu[role="combobox"]
+					min-width:100%
 
 		.temp-wrap
 			display: flex
 			align-items: center
 			flex-wrap: wrap
+
+			+below($desktop)
+				display: block
+				text-align: center
+			+below($mobile)
+				text-align: left
+
+			&>*
+				display: inline-block
+				vertical-align: top

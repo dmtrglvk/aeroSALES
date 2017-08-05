@@ -24,16 +24,42 @@
 	justify-content: space-between
 	align-items: center
 	margin-bottom: 20px
+	padding-bottom: 22px
+	position: relative
 	.sub-ttl
 		font: 18px/22px $roboto-regular
 		margin: 0 30px 0 0
+
+		+below($desktop)
+			margin: 0 10px 0 0
+			white-space: nowrap
+			overflow: hidden
+			max-width: 105px
+			text-overflow: ellipsis
 
 	.l-side
 	.r-side
 		display: flex
 
+	.table-block &
+		padding: 0
+		.r-side
+			+below($mobile)
+				display: none
+	.link
+		position: absolute
+		bottom: 0
+		left:0
+		text-decoration: underline
+		color:$dark-sky-blue
+
+		&:hover
+			text-decoration: none
+
 .tools-box
 	padding: 0 0 0 20px
+	+below($desktop)
+		padding: 0
 	a
 		display: inline-block
 		vertical-align: middle

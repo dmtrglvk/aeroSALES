@@ -1,8 +1,9 @@
 .bootstrap-select
 	position: relative
 	margin-left: 20px
-	+below($mobile)
-		margin: 0
+
+	+below($desktop)
+		margin: 0 0 0 10px
 
 	&:after
 		position: absolute
@@ -63,7 +64,7 @@
 			margin-left: -12px
 		.show-tick&
 			.control-panel &
-				+below($mobile)
+				+below($desktop)
 					display: none
 
 		.caret
@@ -149,23 +150,20 @@
 					&:after
 						content: ''
 		.control-panel &
-			+below($mobile)
+			+below($desktop)
 				display: block
 				position: static
 				width: 100%
 				box-shadow: none
 				min-height:20px !important
 				&.inner
-					display: flex
-					justify-content: space-between
+					text-align: center
 					margin-bottom: 24px
-
-					+below($mobile)
-						margin: 0
 
 					li
 						margin: 0 10px 0 0
 						padding: 0
+						display: inline-block
 
 	&.inner
 		position: static
