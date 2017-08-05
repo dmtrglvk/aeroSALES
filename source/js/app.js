@@ -1,21 +1,89 @@
-var $ = require('jquery'),
-	d3 = require("d3"),
-	selectpicker = require('bootstrap-select');
-
 global.jQuery = require('jquery');
 require('bootstrap');
 
-$(function(){
+var d3 = require("d3/build/d3.min.js"),
+	c3 = require("c3/c3.min.js"),
+	selectpicker = require('bootstrap-select/dist/js/bootstrap-select.min.js');
+
+jQuery(function(){
 	forgotPassword();
 	menuPanel();
 	callCharts();
+	tableColor();
+	jQuery('select').selectpicker();
 
-	$('select').selectpicker();
+	var chart = c3.generate({
+		bindto: '.line-chart',
+		data: {
+			xs: {
+				KTM: "cat1",
+				CMB: "cat2",
+				BOM: "cat3",
+				BLR: "cat4",
+				SHJ: "cat5"
+			},
+			columns: [
+				["cat1", "JAN", "FEB", "MAR", "APR"],
+				["KTM", 30, 200, 100, 400, 200],
+				["cat2", "JAN", "FEB", "MAR", "APR"],
+				["CMB", 400, 60, 200, 800, 10],
+				["cat3", "JAN", "FEB", "MAR", "APR"],
+				["BOM", 300, 160, 300, 500, 100],
+				["cat4", "JAN", "FEB", "MAR", "APR"],
+				["BLR", 200, 260, 100, 200, 50],
+				["cat5", "JAN", "FEB", "MAR", "APR"],
+				["SHJ", 320, 600, 250, 300, 30]
+			]
+		},
+		axis: {
+			x: {
+				padding: {
+					left: -0.4,
+					right: -0.3
+				},
+				type: "category"
+			},
+			y: {
+				padding: {
+					bottom: 10
+				}
+			}
+		},
+		legend: {
+			show: false
+		},
+		point: {
+			r: 4
+		},
+		onrendered: function () {
+			var $$ = this;
+			var circles = $$.getCircles();
+			for(var i = 0; i < circles.length; i++){
+				for(var j = 0; j < circles[i].length; j++){
+					$$.getCircles(j).style("fill", '#FFF')
+						.style("stroke", $$.color)
+						.style("stroke-width", 2);
+				}
+			}
+		}
+	});
+
+	chart.data.colors({
+		KTM: '#488edd',
+		CMB: '#493080',
+		BOM: '#7ac4ae',
+		BLR: '#f7a63d',
+		SHJ: '#f10e0e'
+	});
 
 });
 
 function callCharts() {
-	groupBarChart('.js-bar-chart', './js/data/data.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+	groupBarChart('.js-growth-chart', './js/data/data-growth.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+	groupBarChart('.js-passenger-chart', './js/data/data-passenger.csv', ['#cccbcc', '#7a8690', '#48b192', '#7d6ba4']);
+	groupBarChart('.js-capacity-chart', './js/data/data-capacity.csv', ['#bbe1d6', '#7a8690', '#93d0bd', '#79c4ad']);
+	groupBarChart('.js-revenue-chart', './js/data/data-revenue.csv', ['#c4aa95', '#789d59', '#f9ec61', '#fac06e']);
+	groupBarChart('.js-yeild-chart', './js/data/data-revenue.csv', ['#d9f3c5', '#94af80', '#3ab894', '#55c8a6']);
 }
 
 var waitForFinalEvent = (function() {
@@ -31,11 +99,10 @@ var waitForFinalEvent = (function() {
 	};
 })();
 
-// Usage
-$(window).resize(function() {
+jQuery(window).resize(function() {
 	waitForFinalEvent(function() {
 
-		$('.d3chart svg').remove();
+		jQuery('.d3chart svg').remove();
 
 		callCharts();
 
@@ -43,10 +110,10 @@ $(window).resize(function() {
 });
 
 function forgotPassword() {
-	var forgotLink = $('.js-forgot-password'),
-		loginContent = $('.js-login-content'),
-		forgotContent = $('.js-forgot-content'),
-		backBtn = $('.js-btn-back');
+	var forgotLink = jQuery('.js-forgot-password'),
+		loginContent = jQuery('.js-login-content'),
+		forgotContent = jQuery('.js-forgot-content'),
+		backBtn = jQuery('.js-btn-back');
 
 	forgotLink.on('click', function(e){
 		e.preventDefault();
@@ -63,36 +130,73 @@ function forgotPassword() {
 }
 
 function menuPanel() {
-	var $parent = $('.js-menu-panel-parent'),
-		$opener = $('.js-menu-opener', $parent),
-		$pageOverlay = $('.page-overlay');
+	var $parent = jQuery('.js-menu-panel-parent'),
+		$opener = jQuery('.js-menu-opener', $parent),
+		$pageOverlay = jQuery('.page-overlay');
 
 	$opener.on('click', function(e){
 		e.preventDefault();
 		if(!$parent.hasClass('opened')) {
 			$parent.addClass('opened');
-			$(this).parent().addClass('selected');
-			$(this).find('svg use').attr('xlink:href', '#back');
-			$('body').addClass('menu-open');
+			jQuery(this).parent().addClass('selected');
+			jQuery(this).find('svg use').attr('xlink:href', '#back');
+			jQuery('body').addClass('menu-open');
 		} else {
 			$parent.removeClass('opened');
-			$(this).parent().removeClass('selected');
-			$(this).find('svg use').attr('xlink:href', '#menu');
-			$('body').removeClass('menu-open');
+			jQuery(this).parent().removeClass('selected');
+			jQuery(this).find('svg use').attr('xlink:href', '#menu');
+			jQuery('body').removeClass('menu-open');
 		}
 	});
 	$pageOverlay.on('click', function(){
 		$parent.removeClass('opened');
 		$opener.parent().removeClass('selected');
 		$opener.find('svg use').attr('xlink:href', '#menu');
-		$('body').removeClass('menu-open');
+		jQuery('body').removeClass('menu-open');
+	})
+}
+
+function tableColor(){
+	var cell = jQuery(".js-color-table td[data-attr != 'add-cell']"),
+		cellValues = [];
+
+	cell.each(function () {
+		var currentCell = jQuery(this).text();
+		cellValues.push(+currentCell);
+	});
+
+	var max = cellValues[0];
+
+	for (i = 1; i < cellValues.length; ++i) {
+		if (cellValues[i] > max) max = cellValues[i];
+	}
+
+	cell.each(function (){
+		var currentCell = jQuery(this).text();
+		if(currentCell <= max/8){
+			jQuery(this).addClass('rosy-pink')
+		} else if(currentCell > max/8 && currentCell <= max/7){
+			jQuery(this).addClass('rosy-pink-light')
+		} else if(currentCell > max/7 && currentCell <= max/6){
+			jQuery(this).addClass('orange')
+		} else if(currentCell > max/6 && currentCell <= max/5){
+			jQuery(this).addClass('orange-light')
+		} else if(currentCell > max/5 && currentCell <= max/4){
+			jQuery(this).addClass('yellow')
+		} else if(currentCell > max/4 && currentCell <= max/3){
+			jQuery(this).addClass('green-light')
+		} else if(currentCell > max/3 && currentCell <= max/2){
+			jQuery(this).addClass('green-medium')
+		} else if(currentCell > max/2 && currentCell <= max){
+			jQuery(this).addClass('green-dark')
+		}
 	})
 }
 
 function groupBarChart(element, data, colors) {
 	var svg = d3.select(element).append('svg')
-			.attr('width', $(element).width())
-			.attr('height', $(element).height()),
+			.attr('width', jQuery(element).width())
+			.attr('height', jQuery(element).height()),
 		margin = {
 			top: 20,
 			right: 10,
@@ -152,7 +256,7 @@ function groupBarChart(element, data, colors) {
 			.attr("x", function(d) {
 
 				var color = barColors.shift();
-				$(this).attr('fill', color);
+				jQuery(this).attr('fill', color);
 
 				return x1(d.key);
 			})

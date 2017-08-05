@@ -2,15 +2,14 @@
 	display: flex
 	justify-content: space-between
 	background: #ffffff
-	padding: 21px 20px
-	margin: -25px -25px 20px
+	padding: 21px 25px
 	+below($desktop)
 		display: block
-		margin: 0 -25px
 		padding: 7px 20px
+	+below($mobile)
+		margin: 0 0 20px
 
 	.title
-		font-family: $roboto-light
 		font-size: 30px
 		color: #344252
 		+below($desktop)

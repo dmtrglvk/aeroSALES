@@ -1,5 +1,3 @@
-include ../components/logo.pug
-
 doctype html
 html(lang='en')
 	include ../common/head.pug
@@ -9,59 +7,167 @@ html(lang='en')
 
 			include ../components/menu-panel.pug
 			include ../components/header.pug
-
+			.control-panel
+				h1.title Dashboard
+				.r-bar
+					select.selectpicker(multiple)
+						option G9
+						option(selected="selected") 30
+						option E5
+						option 9P
+					.temp-wrap
+						select.selectpicker(title="Last 24 Hours")
+							option Last 24 Hours
+							option Last 12 Hours
+							option Last 8 Hours
+						ul.btn-tools
+							li.active
+								a(href="#") Day
+							li
+								a(href="#") Route
+							li
+								a(href="#") Region
+						button.dark-grey-btn.customise
+							svg
+								use(xlink:href='#tuning')
+							| Customise
+						select.selectpicker(title="My Queries")
+							option My New Sales Report
+							option My New Report
+						button.dark-grey-btn.export
+							svg
+								use(xlink:href='#exit')
+							| Export
+						button.blue-btn.upload
+							svg
+								use(xlink:href='#upload')
+							| Upload RAW Data
 			.content
-				.control-panel
-					h1.title Dashboard
-					.r-bar
-						select.selectpicker(multiple)
-							option G9
-							option(selected="selected") 30
-							option E5
-							option 9P
-						.temp-wrap
-							select.selectpicker(title="Last 24 Hours")
-								option Last 24 Hours
-								option Last 12 Hours
-								option Last 8 Hours
-							ul.btn-tools
-								li.active
-									a(href="#") Day
-								li
-									a(href="#") Route
-								li
-									a(href="#") Region
-							button.dark-grey-btn.customise
-								svg
-									use(xlink:href='#tuning')
-								| Customise
-							select.selectpicker(title="My Queries")
-								option My New Sales Report
-								option My New Report
-							button.dark-grey-btn.export
-								svg
-									use(xlink:href='#exit')
-								| Export
-							button.blue-btn.upload
-								svg
-									use(xlink:href='#upload')
-								| Upload RAW Data
 				.boxes-wrap
 					.box
 						.ttl-row
-							h4.sub-ttl Growth
-							.tools-box
-								a(href="#")
-									svg
-										use(xlink:href='#settings')
-								a(href="#")
-									svg
-										use(xlink:href='#fullscreen')
-						.d3chart.bar-chart.js-bar-chart
-						.d3chart.bar-chart.js-bar-chart2
+							.l-side
+								h4.sub-ttl Growth
+							.r-side
+								ul.btn-tools
+									li.active
+										a(href="#") Day
+									li
+										a(href="#") Route
+									li
+										a(href="#") Region
+								.tools-box
+									a(href="#")
+										svg
+											use(xlink:href='#settings')
+									a(href="#")
+										svg
+											use(xlink:href='#fullscreen')
+						.d3chart.bar-chart.js-growth-chart
 					.box
 						.ttl-row
-							h4.sub-ttl Passenger
+							.l-side
+								h4.sub-ttl Passenger
+							.r-side
+								ul.btn-tools
+									li.active
+										a(href="#") Day
+									li
+										a(href="#") Route
+									li
+										a(href="#") Region
+								.tools-box
+									a(href="#")
+										svg
+											use(xlink:href='#settings')
+									a(href="#")
+										svg
+											use(xlink:href='#fullscreen')
+						.d3chart.bar-chart.js-passenger-chart
+					.box
+						.ttl-row
+							.l-side
+								h4.sub-ttl Capacity
+							.r-side
+								ul.btn-tools
+									li.active
+										a(href="#") Day
+									li
+										a(href="#") Route
+									li
+										a(href="#") Region
+								.tools-box
+									a(href="#")
+										svg
+											use(xlink:href='#settings')
+									a(href="#")
+										svg
+											use(xlink:href='#fullscreen')
+						.d3chart.bar-chart.js-capacity-chart
+					.box
+						.ttl-row
+							.l-side
+								h4.sub-ttl Top Stations
+							.r-side
+								ul.btn-tools
+									li.active
+										a(href="#") Day
+									li
+										a(href="#") Route
+									li
+										a(href="#") Region
+								.tools-box
+									a(href="#")
+										svg
+											use(xlink:href='#settings')
+									a(href="#")
+										svg
+											use(xlink:href='#fullscreen')
+						.line-chart
+					.box
+						.ttl-row
+							.l-side
+								h4.sub-ttl Revenue
+							.r-side
+								ul.btn-tools
+									li.active
+										a(href="#") Day
+									li
+										a(href="#") Route
+									li
+										a(href="#") Region
+								.tools-box
+									a(href="#")
+										svg
+											use(xlink:href='#settings')
+									a(href="#")
+										svg
+											use(xlink:href='#fullscreen')
+						.d3chart.bar-chart.js-revenue-chart
+					.box
+						.ttl-row
+							.l-side
+								h4.sub-ttl Yeild
+							.r-side
+								ul.btn-tools
+									li.active
+										a(href="#") Day
+									li
+										a(href="#") Route
+									li
+										a(href="#") Region
+								.tools-box
+									a(href="#")
+										svg
+											use(xlink:href='#settings')
+									a(href="#")
+										svg
+											use(xlink:href='#fullscreen')
+						.d3chart.bar-chart.js-yeild-chart
+				.table-block
+					.ttl-row
+						.l-side
+							h4.sub-ttl Seat Factor
 							ul.btn-tools
 								li.active
 									a(href="#") Day
@@ -69,23 +175,22 @@ html(lang='en')
 									a(href="#") Route
 								li
 									a(href="#") Region
-							.tools-box
-								a(href="#")
-									svg
-										use(xlink:href='#settings')
-								a(href="#")
-									svg
-										use(xlink:href='#fullscreen')
-					.box
-						.ttl-row
-							h4.sub-ttl Passenger
-							ul.btn-tools
+							ul.btn-tools.red
 								li.active
-									a(href="#") Day
+									a(href="#") Current Month
 								li
-									a(href="#") Route
+									a(href="#") M+1
 								li
-									a(href="#") Region
+									a(href="#") M+2
+								li
+									a(href="#") M+3
+								li
+									a(href="#") M+4
+								li
+									a(href="#") M+5
+								li
+									a(href="#") M+6
+						.r-side
 							.tools-box
 								a(href="#")
 									svg
@@ -93,6 +198,117 @@ html(lang='en')
 								a(href="#")
 									svg
 										use(xlink:href='#fullscreen')
-
-
-				.d3chart.bar-chart.js-bar-chart
+					.table-wrapper
+						table.js-color-table
+							tr
+								th Dates
+								th
+									span 1
+									span Mon
+								th
+									span 2
+									span Tue
+								th
+									span 3
+									span Wed
+								th
+									span 4
+									span Thu
+								th
+									span 5
+									span Fri
+								th
+									span 6
+									span Sat
+								th
+									span 7
+									span Sun
+								th
+									span 8
+									span Mon
+								th
+									span 9
+									span Tue
+								th
+									span 10
+									span Wed
+								th
+									span 11
+									span Thu
+								th
+									span 12
+									span Fri
+								th
+									span 13
+									span Sat
+								th
+									span 14
+									span Sun
+								th
+									span 15
+									span Mon
+								th
+									span 16
+									span Tue
+								th
+									span 17
+									span Wed
+								th
+									span 18
+									span Thu
+								th
+									span 19
+									span Fri
+								th
+									span 20
+									span Sat
+								th
+									span 21
+									span Sun
+								th
+									span 22
+									span Mon
+								th
+									span 23
+									span Tue
+								th
+									span 24
+									span Wed
+								th
+									span 25
+									span Thu
+								th
+									span 26
+									span Fri
+								th
+									span 27
+									span Sat
+								th
+									span 28
+									span Sun
+								th
+									span 29
+									span Mon
+								th
+									span 30
+									span Tue
+								th
+									span 31
+									span Wed
+								th TOTAL
+							tr
+								td(data-attr = "add-cell") SF
+								each cell in ['86', '150', '150', '120', '155', '34', '34', '143', '62', '130', '93', '61', '45', '61', '167', '166', '150', '21', '130', '90', '42', '27', '123', '75', '143', '82', '159', '166', '42', '51', '100']
+									td=cell
+								td(data-attr = "add-cell") 1500
+							tr
+								td(data-attr = "add-cell") YLD
+								each cell in ['76.5', '43.1', '64.1', '67.9', '52.5', '66.3', '52.0', '82.5', '66.3', '43.7', '61.6', '49.0', '76.5', '34.9', '57.8', '68.5', '85.2', '38.4', '65.1', '75.9', '44.5', '43.1', '45.7', '65.1', '70.8', '28.7', '62.3', '44.2', '61.6', '59.7', '86.7']
+									td=cell
+								td(data-attr = "add-cell") 337.4
+							tr
+								td(data-attr = "add-cell") Rev
+									span (In Millions)
+								each cell in ['45.7', '55.8', '76.5', '80.8', '52.0', '34.4', '64.1', '53.6', '77.9', '85.3', '36.4', '86.1', '44.6', '53.1', '86.8', '51.4', '45.8', '27.5', '44.2', '80.8', '80.8', '35.2', '44.2', '66.3', '65.1', '68.4', '41.0', '66.3', '76.5', '50.9', '49.0']
+									td=cell
+								td(data-attr = "add-cell") 335.2

@@ -2,31 +2,46 @@
 	display: flex
 	flex-wrap: wrap
 	margin-left: -28px
+	+below($mobile)
+		margin-left: 0
 
 	.box
 		width: calc(100%/3 - 28px)
-		margin-left: 28px
+		margin: 0 0 30px 28px
 		background: $white
 		border-radius: 5px
 		box-shadow: 2px 2px 4px 0 rgba(197, 197, 197, 0.5)
 		padding: 11px 15px 26px
 		box-sizing: border-box
+		+below($medium)
+			width: calc(50% - 28px)
+		+below($mobile)
+			width: 100%
+			margin-left: 0
 
-		.ttl-row
-			display: flex
-			justify-content: space-between
-			align-items: center
-			margin-bottom: 20px
-			.sub-ttl
-				font: 18px/22px $roboto-regular
-		.tools-box
-			a
-				display: inline-block
-				vertical-align: middle
-				margin-left: 10px
-				&:hover
-					text-decoration: none
-			svg
-				fill: $dark-grey-blue
-				width: 14px
-				height: 14px
+.ttl-row
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 20px
+	.sub-ttl
+		font: 18px/22px $roboto-regular
+		margin: 0 30px 0 0
+
+	.l-side
+	.r-side
+		display: flex
+
+.tools-box
+	padding: 0 0 0 20px
+	a
+		display: inline-block
+		vertical-align: middle
+		margin-left: 10px
+		&:hover
+			text-decoration: none
+	svg
+		fill: $dark-grey-blue
+		width: 14px
+		height: 14px
+		margin: 3px 0 0
