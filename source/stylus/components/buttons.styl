@@ -53,6 +53,8 @@ button[class*="-btn"]
 	padding: 8px 10px 7px
 	margin: 0 0 0 17px
 	cursor: pointer
+	min-width: 90px
+	box-sizing: border-box
 	+below($desktop)
 		margin: 0 0 0 10px
 	svg
@@ -78,3 +80,7 @@ button[class*="-btn"]
 		svg
 			width: 19px
 			height: 14px
+	&.save
+		svg
+			width: 16px
+			height: 16px

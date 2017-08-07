@@ -8,9 +8,22 @@ var d3 = require("d3/build/d3.min.js"),
 jQuery(function(){
 	forgotPassword();
 	menuPanel();
-	callCharts();
-	tableColor();
+	if(jQuery('.d3chart').length) {
+		callCharts();
+	}
+	tableColor(".js-color-table td[data-attr != 'add-cell']");
+	tableColor(".js-color-table td[data-total = 'total-cell']");
+	multiTable();
 	jQuery('select').selectpicker();
+
+});
+
+function callCharts() {
+	groupBarChart('.js-growth-chart', './js/data/data-growth.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
+	groupBarChart('.js-passenger-chart', './js/data/data-passenger.csv', ['#cccbcc', '#7a8690', '#48b192', '#7d6ba4']);
+	groupBarChart('.js-capacity-chart', './js/data/data-capacity.csv', ['#bbe1d6', '#7a8690', '#93d0bd', '#79c4ad']);
+	groupBarChart('.js-revenue-chart', './js/data/data-revenue.csv', ['#c4aa95', '#789d59', '#f9ec61', '#fac06e']);
+	groupBarChart('.js-yeild-chart', './js/data/data-revenue.csv', ['#d9f3c5', '#94af80', '#3ab894', '#55c8a6']);
 
 	var chart = c3.generate({
 		bindto: '.line-chart',
@@ -76,14 +89,6 @@ jQuery(function(){
 		SHJ: '#f10e0e'
 	});
 
-});
-
-function callCharts() {
-	groupBarChart('.js-growth-chart', './js/data/data-growth.csv', ['#c2e2d6', '#a9d6c4', '#a196c0', '#7c6da7']);
-	groupBarChart('.js-passenger-chart', './js/data/data-passenger.csv', ['#cccbcc', '#7a8690', '#48b192', '#7d6ba4']);
-	groupBarChart('.js-capacity-chart', './js/data/data-capacity.csv', ['#bbe1d6', '#7a8690', '#93d0bd', '#79c4ad']);
-	groupBarChart('.js-revenue-chart', './js/data/data-revenue.csv', ['#c4aa95', '#789d59', '#f9ec61', '#fac06e']);
-	groupBarChart('.js-yeild-chart', './js/data/data-revenue.csv', ['#d9f3c5', '#94af80', '#3ab894', '#55c8a6']);
 }
 
 // var waitForFinalEvent = (function() {
@@ -156,8 +161,8 @@ function menuPanel() {
 	})
 }
 
-function tableColor(){
-	var cell = jQuery(".js-color-table td[data-attr != 'add-cell']"),
+function tableColor(cell){
+	var cell = jQuery(cell),
 		cellValues = [];
 
 	cell.each(function () {
@@ -308,4 +313,20 @@ function groupBarChart(element, data, colors) {
 			.call(d3.axisLeft(y))
 
 	});
+}
+
+function multiTable(){
+	var elem = jQuery('.outer td:first-child');
+
+	elem.on('click', function(){
+		var currentRow = jQuery(this).parent();
+		if(currentRow.hasClass('open')){
+			currentRow.nextUntil('.outer').hide();
+			currentRow.removeClass('open');
+		} else {
+			currentRow.nextUntil('.outer').show();
+			currentRow.addClass('open');
+		}
+
+	})
 }

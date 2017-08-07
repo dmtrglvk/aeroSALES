@@ -43,6 +43,44 @@
 				text-align: left
 				border-left: 0
 				background: rgba(73, 144, 226, 0.06)
+		.hidden
+			display: none
+			td
+				padding: 2px 4px
+				&:first-child
+					font-size: 10px
+					font-family: $roboto-regular
+					padding-left: 25px
+	&.multi-table
+		padding: 34px 15px
+		th
+			svg
+				width: 7px
+				height: 8px
+				fill: #435464
+		td
+			&:first-child
+				background: #fff
+		.outer
+			td
+				&:first-child
+					cursor: pointer
+					padding-left: 10px
+					position: relative
+					&:before
+						border-top: 4px solid #000000
+						border-left: 2px solid transparent
+						border-right: 2px solid transparent
+						position: absolute
+						left: 0
+						top: 50%
+						margin-top: -2px
+						content: ''
+			&.open
+				td
+					&:before
+						border-bottom: 4px solid #000000
+						border-top: 0
 
 .rosy-pink
 	background: $rosy-pink
