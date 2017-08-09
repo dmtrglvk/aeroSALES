@@ -13,6 +13,7 @@ jQuery(function(){
 	}
 	tableColor(".js-color-table td[data-attr != 'add-cell']");
 	tableColor(".js-color-table td[data-total = 'total-cell']");
+	tableValueColor();
 	multiTable();
 	jQuery('select').selectpicker();
 
@@ -328,5 +329,18 @@ function multiTable(){
 			currentRow.addClass('open');
 		}
 
+	})
+}
+
+function tableValueColor() {
+	var item = jQuery('.js-val-color-table td[data-row-ttl != "row-ttl"]');
+
+	item.each(function(){
+		var currentTempItem = jQuery(this).text(),
+			currentItem = parseInt(currentTempItem);
+
+		if(currentItem < 0){
+			jQuery(this).addClass('pink-color');
+		}
 	})
 }

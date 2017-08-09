@@ -1,0 +1,435 @@
+doctype html
+html(lang='en')
+	include ../common/head.pug
+	body
+		.page
+			.page-overlay
+
+			include ../components/menu-panel.pug
+			include ../components/header.pug
+			.control-panel
+				h1.title Seat Factor
+				.r-bar
+					button.blue-btn.upload
+						svg
+							use(xlink:href='#upload')
+						| Save to My Queries
+					button.blue-btn.save
+						svg
+							use(xlink:href='#save')
+						| Save
+					button.dark-grey-btn.export
+						svg
+							use(xlink:href='#exit')
+						| Export
+			.content
+				.white-content
+					.content-panel
+						ul.btn-tools
+							li
+								a(href="#") Day
+							li.active
+								a(href="#") Day & Yelid
+							li
+								a(href="#") Route
+							li
+								a(href="#") Region
+						.r-bar
+							select.selectpicker(multiple)
+								each mon in [{month: 'January'}, {month: 'February'}, {month: 'March'}, {month: 'May', selected: true}, {month: 'June'}, {month: 'July'}, {month: 'August'}, {month: 'September'}, {month: 'October'}, {month: 'November'}, {month: 'December'}]
+									option(selected=mon.selected)= mon.month
+							select.selectpicker(title="All Routes")
+								option My New Sales Report
+								option My New Report
+							select.selectpicker(title="In & Out")
+								option My New Sales Report
+								option My New Report
+							select.selectpicker(title="All Sectors")
+								option My New Sales Report
+								option My New Report
+							button.blue-btn.schedule
+								svg
+									use(xlink:href='#envelope')
+								| Schedule
+					.table-wrapper
+						h3 May 2017 SF
+						table.js-color-table
+							tr
+								th Dates
+								th
+									span 1
+									span Mon
+								th
+									span 2
+									span Tue
+								th
+									span 3
+									span Wed
+								th
+									span 4
+									span Thu
+								th
+									span 5
+									span Fri
+								th
+									span 6
+									span Sat
+								th
+									span 7
+									span Sun
+								th
+									span 8
+									span Mon
+								th
+									span 9
+									span Tue
+								th
+									span 10
+									span Wed
+								th
+									span 11
+									span Thu
+								th
+									span 12
+									span Fri
+								th
+									span 13
+									span Sat
+								th
+									span 14
+									span Sun
+								th
+									span 15
+									span Mon
+								th
+									span 16
+									span Tue
+								th
+									span 17
+									span Wed
+								th
+									span 18
+									span Thu
+								th
+									span 19
+									span Fri
+								th
+									span 20
+									span Sat
+								th
+									span 21
+									span Sun
+								th
+									span 22
+									span Mon
+								th
+									span 23
+									span Tue
+								th
+									span 24
+									span Wed
+								th
+									span 25
+									span Thu
+								th
+									span 26
+									span Fri
+								th
+									span 27
+									span Sat
+								th
+									span 28
+									span Sun
+								th
+									span 29
+									span Mon
+								th
+									span 30
+									span Tue
+								th
+									span 31
+									span Wed
+								th TOTAL
+							tr
+								td(data-attr = "add-cell") SF
+								each cell in ['86', '150', '150', '120', '155', '34', '34', '143', '62', '130', '93', '61', '45', '61', '167', '166', '150', '21', '130', '90', '42', '27', '123', '75', '143', '82', '159', '166', '42', '51', '100']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 1500
+							tr
+								td(data-attr = "add-cell") YLD
+								each cell in ['76.5', '43.1', '64.1', '67.9', '52.5', '66.3', '52.0', '82.5', '66.3', '43.7', '61.6', '49.0', '76.5', '34.9', '57.8', '68.5', '85.2', '38.4', '65.1', '75.9', '44.5', '43.1', '45.7', '65.1', '70.8', '28.7', '62.3', '44.2', '61.6', '59.7', '86.7']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 337.4
+							tr
+								td(data-attr = "add-cell") Rev
+									span (In Millions)
+								each cell in ['45.7', '55.8', '76.5', '80.8', '52.0', '34.4', '64.1', '53.6', '77.9', '85.3', '36.4', '86.1', '44.6', '53.1', '86.8', '51.4', '45.8', '27.5', '44.2', '80.8', '80.8', '35.2', '44.2', '66.3', '65.1', '68.4', '41.0', '66.3', '76.5', '50.9', '49.0']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 335.2
+					.table-wrapper
+						h3 May 2017 SF & YLD as of same day LY
+						table.js-color-table
+							tr
+								th Dates
+								th
+									span 1
+									span Mon
+								th
+									span 2
+									span Tue
+								th
+									span 3
+									span Wed
+								th
+									span 4
+									span Thu
+								th
+									span 5
+									span Fri
+								th
+									span 6
+									span Sat
+								th
+									span 7
+									span Sun
+								th
+									span 8
+									span Mon
+								th
+									span 9
+									span Tue
+								th
+									span 10
+									span Wed
+								th
+									span 11
+									span Thu
+								th
+									span 12
+									span Fri
+								th
+									span 13
+									span Sat
+								th
+									span 14
+									span Sun
+								th
+									span 15
+									span Mon
+								th
+									span 16
+									span Tue
+								th
+									span 17
+									span Wed
+								th
+									span 18
+									span Thu
+								th
+									span 19
+									span Fri
+								th
+									span 20
+									span Sat
+								th
+									span 21
+									span Sun
+								th
+									span 22
+									span Mon
+								th
+									span 23
+									span Tue
+								th
+									span 24
+									span Wed
+								th
+									span 25
+									span Thu
+								th
+									span 26
+									span Fri
+								th
+									span 27
+									span Sat
+								th
+									span 28
+									span Sun
+								th
+									span 29
+									span Mon
+								th
+									span 30
+									span Tue
+								th
+									span 31
+									span Wed
+								th TOTAL
+							tr
+								td(data-attr = "add-cell") SF
+								each cell in ['86', '150', '150', '120', '155', '34', '34', '143', '62', '130', '93', '61', '45', '61', '167', '166', '150', '21', '130', '90', '42', '27', '123', '75', '143', '82', '159', '166', '42', '51', '100']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 1500
+							tr
+								td(data-attr = "add-cell") YLD
+								each cell in ['76.5', '43.1', '64.1', '67.9', '52.5', '66.3', '52.0', '82.5', '66.3', '43.7', '61.6', '49.0', '76.5', '34.9', '57.8', '68.5', '85.2', '38.4', '65.1', '75.9', '44.5', '43.1', '45.7', '65.1', '70.8', '28.7', '62.3', '44.2', '61.6', '59.7', '86.7']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 337.4
+							tr
+								td(data-attr = "add-cell") Rev
+									span (In Millions)
+								each cell in ['45.7', '55.8', '76.5', '80.8', '52.0', '34.4', '64.1', '53.6', '77.9', '85.3', '36.4', '86.1', '44.6', '53.1', '86.8', '51.4', '45.8', '27.5', '44.2', '80.8', '80.8', '35.2', '44.2', '66.3', '65.1', '68.4', '41.0', '66.3', '76.5', '50.9', '49.0']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 335.2
+							tr.sum
+								td(data-attr = "add-cell") Sum of CAP
+								each cell in ['26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368', '26,368', '26,368', '112,122', '21,368']
+									td(data-attr = "add-cell")=cell
+								td(data-attr = "add-cell") 335.2
+					.table-wrapper
+						table.js-val-color-table.white-row-ttl
+							tr
+								th
+								- var n = 1;
+									while n < 32
+										th= n++
+								th TOTAL
+							tr
+								td(data-row-ttl="row-ttl") SF VAR (pts)
+								each cell in ['+2', '-2', '-11', '-11', '-4', '0', '0', '-14', '0', '-11', '+8', '-11', '+5', '-9', '-9', '-4', '-4', '+1', '-11', '+1', '0', '-9', '-2', '+2', '-2', '-14', '-4', '+1', '+7', '0', '-4', '-1']
+									td=cell
+							tr
+								td(data-row-ttl="row-ttl") YLD VAR (AED)
+								each cell in ['-9', '0', '+5', '-9', '-14', '-2', '+7', '+7', '+5', '+8', '-2', '-14', '+5', '0', '-4', '+5', '-2', '+8', '-11', '-4', '-2', '-2', '+7', '-2', '-8', '0', '+8', '-11', '-2', '-14', '-2', '-20']
+									td=cell
+							tr.bg-pink
+								td(data-row-ttl="row-ttl") Rev VAR (%)
+								each cell in ['-8%', '0', '+2%', '-4%', '+7%', '+5%', '+5%', '+14%', '+7%', '+7%', '0%', '-4%', '-2%', '-14%', '-4%', '0%', '-11%', '-4%', '-8%', '-11%', '+8%', '-11%', '+7%', '-2%', '-11%', '-14%', '-2%', '-14%', '-4%', '-2%', '0%', '-6%']
+									td=cell
+							tr
+								td(data-row-ttl="row-ttl") Rev VAR (AED)
+								each cell in ['+2', '-2', '-11', '-11', '-4', '0', '0', '-14', '0', '-11', '+8', '-11', '+5', '-9', '-9', '-4', '-4', '+1', '-11', '+1', '0', '-9', '-2', '+2', '-2', '-14', '-4', '+1', '+7', '0', '-4', '-1']
+									td=cell
+							tr.bg-pink
+								td(data-row-ttl="row-ttl") Rev VAR (%)
+								each cell in ['-8%', '0', '+2%', '-4%', '+7%', '+5%', '+5%', '+14%', '+7%', '+7%', '0%', '-4%', '-2%', '-14%', '-4%', '0%', '-11%', '-4%', '-8%', '-11%', '+8%', '-11%', '+7%', '-2%', '-11%', '-14%', '-2%', '-14%', '-4%', '-2%', '0%', '-6%']
+									td=cell
+							tr
+								td(data-row-ttl="row-ttl") CAP VAR (%)
+								each cell in ['-8%', '0', '+2%', '-4%', '+7%', '+5%', '+5%', '+14%', '+7%', '+7%', '0%', '-4%', '-2%', '-14%', '-4%', '0%', '-11%', '-4%', '-8%', '-11%', '+8%', '-11%', '+7%', '-2%', '-11%', '-14%', '-2%', '-14%', '-4%', '-2%', '0%', '-6%']
+									td=cell
+					.table-wrapper
+						h3 May 2016 SF & YLD "Month End"
+						table.js-color-table
+							tr
+								th Dates
+								th
+									span 1
+									span Mon
+								th
+									span 2
+									span Tue
+								th
+									span 3
+									span Wed
+								th
+									span 4
+									span Thu
+								th
+									span 5
+									span Fri
+								th
+									span 6
+									span Sat
+								th
+									span 7
+									span Sun
+								th
+									span 8
+									span Mon
+								th
+									span 9
+									span Tue
+								th
+									span 10
+									span Wed
+								th
+									span 11
+									span Thu
+								th
+									span 12
+									span Fri
+								th
+									span 13
+									span Sat
+								th
+									span 14
+									span Sun
+								th
+									span 15
+									span Mon
+								th
+									span 16
+									span Tue
+								th
+									span 17
+									span Wed
+								th
+									span 18
+									span Thu
+								th
+									span 19
+									span Fri
+								th
+									span 20
+									span Sat
+								th
+									span 21
+									span Sun
+								th
+									span 22
+									span Mon
+								th
+									span 23
+									span Tue
+								th
+									span 24
+									span Wed
+								th
+									span 25
+									span Thu
+								th
+									span 26
+									span Fri
+								th
+									span 27
+									span Sat
+								th
+									span 28
+									span Sun
+								th
+									span 29
+									span Mon
+								th
+									span 30
+									span Tue
+								th
+									span 31
+									span Wed
+								th TOTAL
+							tr
+								td(data-attr = "add-cell") SF
+								each cell in ['86', '150', '150', '120', '155', '34', '34', '143', '62', '130', '93', '61', '45', '61', '167', '166', '150', '21', '130', '90', '42', '27', '123', '75', '143', '82', '159', '166', '42', '51', '100']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 1500
+							tr
+								td(data-attr = "add-cell") YLD
+								each cell in ['76.5', '43.1', '64.1', '67.9', '52.5', '66.3', '52.0', '82.5', '66.3', '43.7', '61.6', '49.0', '76.5', '34.9', '57.8', '68.5', '85.2', '38.4', '65.1', '75.9', '44.5', '43.1', '45.7', '65.1', '70.8', '28.7', '62.3', '44.2', '61.6', '59.7', '86.7']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 337.4
+							tr
+								td(data-attr = "add-cell") Rev
+									span (In Millions)
+								each cell in ['45.7', '55.8', '76.5', '80.8', '52.0', '34.4', '64.1', '53.6', '77.9', '85.3', '36.4', '86.1', '44.6', '53.1', '86.8', '51.4', '45.8', '27.5', '44.2', '80.8', '80.8', '35.2', '44.2', '66.3', '65.1', '68.4', '41.0', '66.3', '76.5', '50.9', '49.0']
+									td=cell
+								td(data-attr = "add-cell", data-total="total-cell") 335.2

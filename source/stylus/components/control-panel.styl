@@ -14,33 +14,41 @@
 			text-align: center
 			margin-bottom: 30px
 
-	.r-bar
+.r-bar
+	display: flex
+	max-width: 85%
+	justify-content: flex-end
+	align-items: center
+	+below($desktop)
+		width:100%
+		display: block
+		max-width: 9999px
+
+		&>.bootstrap-select
+			margin: 0
+
+			&>.dropdown-menu[role="combobox"]
+				min-width:100%
+
+	.temp-wrap
 		display: flex
-		max-width: 85%
-		justify-content: flex-end
 		align-items: center
+		flex-wrap: wrap
+
 		+below($desktop)
-			width:100%
 			display: block
-			max-width: 9999px
+			text-align: center
+		+below($mobile)
+			text-align: left
 
-			&>.bootstrap-select
-				margin: 0
+		&>*
+			display: inline-block
+			vertical-align: top
 
-				&>.dropdown-menu[role="combobox"]
-					min-width:100%
+.content-panel
+	background: #ffffff
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 30px
 
-		.temp-wrap
-			display: flex
-			align-items: center
-			flex-wrap: wrap
-
-			+below($desktop)
-				display: block
-				text-align: center
-			+below($mobile)
-				text-align: left
-
-			&>*
-				display: inline-block
-				vertical-align: top
