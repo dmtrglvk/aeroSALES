@@ -19,13 +19,19 @@
 	max-width: 85%
 	justify-content: flex-end
 	align-items: center
+
 	+below($desktop)
 		width:100%
 		display: block
 		max-width: 9999px
+		text-align: center
+		&>*
+			display: inline-block
+			vertical-align: top
+			margin-bottom: 10px
 
 		&>.bootstrap-select
-			margin: 0
+			//margin: 0
 
 			&>.dropdown-menu[role="combobox"]
 				min-width:100%
@@ -36,14 +42,18 @@
 		flex-wrap: wrap
 
 		+below($desktop)
-			display: block
-			text-align: center
+		//	display: block
+			justify-content: space-around
+			padding: 0 50px
+			&>*
+				margin-bottom: 10px
+		+below($medium)
+			padding: 0
+			margin: 0 10px 0 0
 		+below($mobile)
-			text-align: left
+			justify-content: space-between
 
-		&>*
-			display: inline-block
-			vertical-align: top
+
 
 .content-panel
 	background: #ffffff
@@ -51,4 +61,12 @@
 	justify-content: space-between
 	align-items: center
 	margin-bottom: 30px
+
+	+below($desktop)
+		display: block
+		text-align: center
+
+		.btn-tools
+			display: inline-block
+			margin: 0 0 15px
 

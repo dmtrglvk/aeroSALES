@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+	include ../common/head.pug
+	body
+		.page
+			.page-overlay
+
+			include ../components/menu-panel.pug
+			include ../components/header.pug
+			.control-panel
+				h1.title Growth
+				.r-bar
+					ul.btn-tools
+						li.active
+							a(href="#") Day
+						li
+							a(href="#") Route
+						li
+							a(href="#") Region
+					button.blue-btn.upload
+						svg
+							use(xlink:href='#upload')
+						| Save to My Queries
+					button.blue-btn.save
+						svg
+							use(xlink:href='#save')
+						| Save
+					button.dark-grey-btn.export
+						svg
+							use(xlink:href='#exit')
+						| Export
+			.content
+				.white-content.divider
+					.content-panel
+						h3 Daily Growth
+						.r-bar
+							select.selectpicker(multiple)
+								each mon in [{month: 'January'}, {month: 'February'}, {month: 'March'}, {month: 'May', selected: true}, {month: 'June'}, {month: 'July'}, {month: 'August'}, {month: 'September'}, {month: 'October'}, {month: 'November'}, {month: 'December'}]
+									option(selected=mon.selected)= mon.month
+							select.selectpicker(title="All Routes")
+								option My New Sales Report
+								option My New Report
+							select.selectpicker(title="In & Out")
+								option My New Sales Report
+								option My New Report
+							select.selectpicker(title="All Sectors")
+								option My New Sales Report
+								option My New Report
+							button.blue-btn.schedule
+								svg
+									use(xlink:href='#envelope')
+								| Schedule
