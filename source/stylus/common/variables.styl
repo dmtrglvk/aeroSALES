@@ -20,3 +20,28 @@ holder()
 		display: block
 		clear: both
 		content: ''
+
+unvisible-input()
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 0
+
+checkbox(radius, top-var, width-var, height-var)
+	position: absolute
+	left: 0
+	top: top-var
+	width: width-var
+	height: height-var
+	border-radius: radius
+	border: 1px solid $dark-sky-blue
+
+mark(sm-line, lg-line, left-var)
+	width: 9px
+	height: 4px
+	border: solid $white
+	border-width: 0 0 sm-line lg-line
+	transform: rotate(-45deg)
+	position: absolute
+	left: left-var
+	top: 2px

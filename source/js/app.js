@@ -15,6 +15,7 @@ jQuery(function(){
 	tableColor(".js-color-table td[data-total = 'total-cell']");
 	tableValueColor();
 	multiTable();
+	chartStyle();
 	jQuery('select').selectpicker();
 
 });
@@ -342,5 +343,14 @@ function tableValueColor() {
 		if(currentItem < 0){
 			jQuery(this).addClass('pink-color');
 		}
+	})
+}
+
+function chartStyle(){
+	var listItem = jQuery('.chart-style li');
+
+	listItem.on('click', function(){
+		listItem.removeClass('active');
+		jQuery(this).addClass('active');
 	})
 }

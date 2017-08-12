@@ -31,22 +31,77 @@ html(lang='en')
 						| Export
 			.content
 				.white-content.divider
-					.content-panel
-						h3 Daily Growth
-						.r-bar
-							select.selectpicker(multiple)
-								each mon in [{month: 'January'}, {month: 'February'}, {month: 'March'}, {month: 'May', selected: true}, {month: 'June'}, {month: 'July'}, {month: 'August'}, {month: 'September'}, {month: 'October'}, {month: 'November'}, {month: 'December'}]
-									option(selected=mon.selected)= mon.month
-							select.selectpicker(title="All Routes")
-								option My New Sales Report
-								option My New Report
-							select.selectpicker(title="In & Out")
-								option My New Sales Report
-								option My New Report
-							select.selectpicker(title="All Sectors")
-								option My New Sales Report
-								option My New Report
-							button.blue-btn.schedule
-								svg
-									use(xlink:href='#envelope')
-								| Schedule
+					.holder
+						.content-info
+							.content-panel
+								h3 Daily Growth
+								.r-bar
+									select.selectpicker(title="All Routes", multiple, data-live-search="true")
+										each routes in [{route: 'MCT'}, {route: 'SHJ'}, {route: 'DXB'}, {route: 'IST', selected: true}, {route: 'KWI'}, {route: 'AMM'}, {route: 'DOH'}, {route: 'IST'}, {route: 'AUH'}]
+											option(selected=routes.selected)= routes.route
+									select.selectpicker(title="In & Out")
+										option My New Sales Report
+										option My New Report
+									select.selectpicker(title="All Sectors")
+										option My New Sales Report
+										option My New Report
+									select.selectpicker(multiple)
+										each mon in [{month: 'January'}, {month: 'February'}, {month: 'March'}, {month: 'May', selected: true}, {month: 'June'}, {month: 'July'}, {month: 'August'}, {month: 'September'}, {month: 'October'}, {month: 'November'}, {month: 'December'}]
+											option(selected=mon.selected)= mon.month
+							.info-block
+								.forcast
+									strong.box-ttl Forcast
+									form(action="#")
+										fieldset
+											.form-row
+												label Capacity
+												input(type="text", value="719,098")
+											.form-row
+												label Pax
+												input(type="text", value="434,490")
+											.form-row
+												label SF %
+												input(type="text", value="80%")
+											.form-row
+												label Revenue
+												input(type="text", value="120,719,098")
+											.form-row
+												label Avg. YLD
+												input(type="text", value="329.0")
+											.form-row
+												label R/ASK (fils)
+												input(type="text", value="14.1")
+								.chart-wrap
+									//.d3chart.bar-chart.js-growth-chart
+						.content-sidebar
+							h3 Select Graph Style
+							ul.chart-style
+								li.active
+									svg
+										use(xlink:href='#col-chart')
+								li
+									svg
+										use(xlink:href='#horizontal-col-chart')
+								li
+									svg
+										use(xlink:href='#line-chart')
+								li
+									svg
+										use(xlink:href='#region-chart')
+								li
+									img(src="images/pie-chart.svg", alt="")
+							h3.not-indent Schedule
+							span.note Report Generation Frequency
+							.checkbox-wrap
+								.row
+									input(type="checkbox", checked="checked", id="daily")
+									label(for="daily") Daily
+								.row
+									input(type="checkbox", id="weekly")
+									label(for="weekly") Weekly
+								.row
+									input(type="checkbox", id="monthly")
+									label(for="monthly") Monthly
+								.row
+									input(type="checkbox", checked="checked", id="custom")
+									label(for="custom") Custom Date

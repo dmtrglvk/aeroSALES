@@ -80,7 +80,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('imagemin', function() {
-	gulp.src('./source/images/*.{jpg,png,gif}')
+	gulp.src('./source/images/*.{jpg,png,gif,svg}')
 		.pipe(imagemin())
 		.pipe(gulp.dest('./web/images/'))
 });
