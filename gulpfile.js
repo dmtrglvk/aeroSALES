@@ -35,6 +35,7 @@ gulp.task('views', function buildHTML() {
 gulp.task('styles', function () {
 	return gulp.src(config.stylusSrc)
 		.pipe(stylus({
+			'include css': true,
 			use: [poststylus([autoprefixer({ browsers: ['last 5 versions'] })]), rupture()]
 		}))
 		.pipe(cssmin())

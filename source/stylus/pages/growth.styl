@@ -2,6 +2,11 @@
 	float: left
 	width: calc(100% - 365px)
 
+	+below($desktop)
+		float: none
+		width:100%
+		margin: 0 0 30px
+
 	.bootstrap-select.open
 		position: relative
 		z-index:22
@@ -12,8 +17,16 @@
 	padding: 0 0 0 25px
 	box-sizing: border-box
 
+	+below($desktop)
+		float: none
+		width:100%
+		padding: 0
+
 .info-block
 	display: flex
+
+	+below($desktop)
+		display: block
 
 .forcast
 	width: 200px
@@ -24,6 +37,10 @@
 	box-sizing: border-box
 	font: 14px/18px $roboto-regular
 	margin-right: 30px
+
+	+below($desktop)
+		width:100%
+
 	.box-ttl
 		display: block
 		margin-bottom: 15px
@@ -36,6 +53,10 @@
 			float: left
 			max-width: 200px
 			margin-top: 7px
+
+			+below($desktop)
+				width:100px
+
 		input[type="text"]
 			float: right
 			width: 110px
@@ -48,8 +69,14 @@
 			outline: none
 			margin: 0
 
+			+below($desktop)
+				width:calc(100% - 126px)
+
 .chart-wrap
 	width: calc(100% - 230px)
+
+	+below($desktop)
+		width:100%
 
 	.bar-chart
 		height:100%
@@ -132,3 +159,92 @@
 					background: $dark-sky-blue
 				&:after
 					content: ''
+
+.datepicker-row
+	display: flex
+	justify-content: space-between
+	width:100%
+	margin: 0 0 45px
+
+	&.inactive
+		opacity:0.5
+
+	&>div
+		width: calc(50% - 10px)
+
+label.input-label
+	display: block
+	font-size: 12px
+
+.datepicker
+	border: 0
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+	background: url(../images/calendar.svg) 100% 50% no-repeat
+	display: block
+	width:100%
+	outline: none
+	font-size: 16px
+	margin: 0
+	padding: 10px 0
+
+.recepients-holder
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+	position: relative
+	margin: 20px 0 30px
+
+	.add
+		position: absolute
+		right: 0
+		top:50%
+		transform:translate(0, -50%)
+		width:18px
+		height:18px
+
+		svg
+			display: block
+			fill: $dark-sky-blue
+			width:100%
+			height:100%
+
+	input
+		padding: 11px 0
+		font-size: 16px
+		outline: none
+		margin: 0
+		width:90%
+		background: none
+		border:0
+
+.recepients-list
+	.item
+		background: $dark-sky-blue
+		border-radius: 100px
+		padding: 0 14px
+		color: $white
+		font-size: 14px
+		line-height: 30px
+		display: inline-block
+		vertical-align: top
+		margin: 0 6px 10px 0
+
+		span
+			display: inline-block
+			overflow: hidden
+			white-space: nowrap
+			max-width: 105px
+			text-overflow: ellipsis
+			vertical-align: top
+			margin: 0 10px 0 0
+
+		.remove
+			width:11px
+			height:11px
+			display: inline-block
+			vertical-align: top
+			margin: 9px 0 0
+
+			svg
+				fill: $white
+				display: block
+				width: 100%
+				height: 100%

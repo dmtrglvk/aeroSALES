@@ -1,5 +1,7 @@
 global.jQuery = require('jquery');
 require('bootstrap/dist/js/bootstrap.min');
+require('pikaday');
+require('pikaday/plugins/pikaday.jquery');
 
 var d3 = require("d3/build/d3.min.js"),
 	c3 = require("c3/c3.min.js"),
@@ -21,8 +23,20 @@ jQuery(function(){
 		jQuery('.content-info select').on('hide.bs.select', function(){
 			jQuery('.page-fader').hide();
 		})
+		jQuery('#custom-date').on('change', function(){
+			if(jQuery(this).is(':checked')) {
+				jQuery(this).parents('.content-sidebar').find('.datepicker-row').removeClass('inactive').find('input').removeAttr('disabled');
+			} else {
+				jQuery(this).parents('.content-sidebar').find('.datepicker-row').addClass('inactive').find('input').prop('disabled', 'disabled');
+			}
+		})
 	}
 	popup();
+
+	if(jQuery('.datepicker-row').length) {
+
+		jQuery('.datepicker').pikaday()
+	}
 
 	if(jQuery('.d3chart').length) {
 		callCharts();
@@ -445,33 +459,4 @@ function callPopupChart() {
 		'2017': '#ee0101'
 	});
 
-	chart.xgrids([
-		{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},
-		{value: 6},
-		{value: 7},
-		{value: 8},
-		{value: 9},
-		{value: 10},
-		{value: 11},
-		{value: 12},
-		{value: 13},
-		{value: 14},
-		{value: 15},
-		{value: 16},
-		{value: 17},
-		{value: 18},
-		{value: 19},
-		{value: 20},
-		{value: 21},
-		{value: 22},
-		{value: 23},
-		{value: 24},
-		{value: 25},
-		{value: 26},
-		{value: 27},
-		{value: 28},
-		{value: 29},
-		{value: 30}
-	]);
-
-}
+	chart.xgrids([{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10},{value: 11},{value: 12},{value: 13},{value: 14},{value: 15},{value: 16},{value: 17},{value: 18},{value: 19},{value: 20},{value: 21},{value: 22},{value: 23},{value: 24},{value: 25},{value: 26},{value: 27},{value: 28},{value: 29},{value: 30}]);}

@@ -106,5 +106,30 @@ html(lang='en')
 									input(type="checkbox", id="monthly")
 									label(for="monthly") Monthly
 								.row
-									input(type="checkbox", checked="checked", id="custom")
-									label(for="custom") Custom Date
+									input(type="checkbox", id="custom-date")
+									label(for="custom-date") Custom Date
+							.datepicker-row.inactive
+								div
+									label(for="from-date" class="input-label") From
+									input(type="text", id="from-date", class="datepicker" disabled)
+								div
+									label(for="to-date" class="input-label") To
+									input(type="text", id="to-date", class="datepicker" disabled)
+							h3.not-indent Recepients
+							.recepients-holder
+								label(for="recepients" class="input-label") Email Address
+								input(type="text", id="recepients")
+								a.add(href="#")
+									svg
+										use(xlink:href='#add')
+							.recepients-list
+								.item
+									span shiran@isa.ae
+									a.remove(href="#")
+										svg
+											use(xlink:href='#close')
+								.item
+									span aamir@airarabia.com
+									a.remove(href="#")
+										svg
+											use(xlink:href='#close')
