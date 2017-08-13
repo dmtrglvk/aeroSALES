@@ -135,6 +135,16 @@
 						background: $dark-sky-blue
 					&:after
 						content: ''
+
+			&.hidden
+				display: none
+
+			&.no-results
+				padding: 20px 10px 0
+
+			&.active
+				margin-top: 20px
+
 		.control-panel &
 			+below($desktop)
 				display: block
@@ -174,3 +184,6 @@
 		display: block
 		border: solid 1px rgba(151, 151, 151, 0.56)
 		outline: none
+
+	& + ul
+		overflow: visible !important

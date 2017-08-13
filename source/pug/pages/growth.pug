@@ -4,6 +4,7 @@ html(lang='en')
 	body
 		.page
 			.page-overlay
+			.page-fader
 
 			include ../components/menu-panel.pug
 			include ../components/header.pug
@@ -72,7 +73,9 @@ html(lang='en')
 												label R/ASK (fils)
 												input(type="text", value="14.1")
 								.chart-wrap
-									//.d3chart.bar-chart.js-growth-chart
+									.chart-legend
+
+									.d3chart.bar-chart.js-growth-chart
 						.content-sidebar
 							h3 Select Graph Style
 							ul.chart-style

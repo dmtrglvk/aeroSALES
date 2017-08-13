@@ -4,6 +4,7 @@ html(lang='en')
 	body
 		.page
 			.page-overlay
+			.page-fader
 
 			include ../components/menu-panel.pug
 			include ../components/header.pug
@@ -43,6 +44,19 @@ html(lang='en')
 								use(xlink:href='#upload')
 							| Upload RAW Data
 			.content
+				.popup.js-popup.chart-popup#pax-popup
+					.popup-header
+						strong Yield Trends by RUN Date - May 2017 vs May 2016
+						span.close-popup.js-popup-closer
+							svg
+								use(xlink:href='#close')
+					.popup-content
+						.popup-chart
+							span.axis-label.y-axis-label YEILD AED
+							span.axis-label.x-axis-label DAY
+							.popup-chart-placeholder
+							button.blue-btn.js-popup-closer
+								| CLOSE
 				.boxes-wrap
 					.box
 						.ttl-row
@@ -66,7 +80,7 @@ html(lang='en')
 						.d3chart.bar-chart.js-growth-chart
 					.box
 						.ttl-row
-							a.link(href="#") Pax & Yld Contribution by STN
+							a.link(href="#pax-popup" class="js-popup-opener") Pax & Yld Contribution by STN
 							.l-side
 								h4.sub-ttl Passenger
 							.r-side
@@ -127,7 +141,7 @@ html(lang='en')
 						.line-chart
 					.box
 						.ttl-row
-							a.link(href="#") Pax & Yld Contribution by STN
+							a.link(href="#pax-popup" class="js-popup-opener") Pax & Yld Contribution by STN
 							.l-side
 								h4.sub-ttl Revenue
 							.r-side

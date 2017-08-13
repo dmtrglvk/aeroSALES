@@ -1,5 +1,5 @@
 global.jQuery = require('jquery');
-require('bootstrap');
+require('bootstrap/dist/js/bootstrap.min');
 
 var d3 = require("d3/build/d3.min.js"),
 	c3 = require("c3/c3.min.js"),
@@ -8,16 +8,25 @@ var d3 = require("d3/build/d3.min.js"),
 jQuery(function(){
 	forgotPassword();
 	menuPanel();
-	if(jQuery('.d3chart').length) {
-		callCharts();
-	}
 	tableColor(".js-color-table td[data-attr != 'add-cell']");
 	tableColor(".js-color-table td[data-total = 'total-cell']");
 	tableValueColor();
 	multiTable();
-	chartStyle();
 	jQuery('select').selectpicker();
 
+	if(jQuery('.content-info').length) {
+		jQuery('.content-info select').on('show.bs.select', function(){
+			jQuery('.page-fader').show();
+		});
+		jQuery('.content-info select').on('hide.bs.select', function(){
+			jQuery('.page-fader').hide();
+		})
+	}
+	popup();
+
+	if(jQuery('.d3chart').length) {
+		callCharts();
+	}
 });
 
 function callCharts() {
@@ -346,11 +355,123 @@ function tableValueColor() {
 	})
 }
 
-function chartStyle(){
-	var listItem = jQuery('.chart-style li');
+function popup() {
+	var opener = jQuery('.js-popup-opener'),
+		closer = jQuery('.js-popup-closer'),
+		popup = jQuery('.js-popup'),
+		fader = jQuery('.page-fader');
 
-	listItem.on('click', function(){
-		listItem.removeClass('active');
-		jQuery(this).addClass('active');
-	})
+	opener.on('click', function(e){
+		e.preventDefault();
+
+		var clickedEl = jQuery(this);
+
+		var el = jQuery(jQuery(this).attr('href'));
+
+		fader.fadeIn(300, function(){
+			if(jQuery(window).width() < 700) {
+				el.css('top', clickedEl.offset().top - 200 + 'px')
+			}
+			el.fadeIn(300, function(){
+				if(el.hasClass('chart-popup')) {
+					callPopupChart();
+				}
+			});
+		})
+
+	});
+
+	closer.on('click', function(e){
+		e.preventDefault();
+
+		popup.fadeOut(300, function(){
+			fader.fadeOut(300);
+		})
+
+	});
+
+}
+
+function callPopupChart() {
+	var chart = c3.generate({
+		bindto: '.popup-chart-placeholder',
+		data: {
+			xs: {
+				'2016': "cat1",
+				'2017': "cat2"
+			},
+			columns: [
+				["cat1", 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+				["2016", 363,365,360,363,361,365,370,361,363,365,360,361,362,363,364,365,360,355,368,369,368,364,363,362,363,365,360,363,361,365],
+				["cat2", 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+				["2017", 333,335,330,333,331,335,330,331,333,335,330,331,332,333,334,335,330,335,338,339,338,334,333,332,333,335,330,333,300,310]
+			],
+			labels: true
+		},
+		axis: {
+			x: {
+				padding: {
+					left: -0.2,
+					right: 1.2
+				},
+				type: "category",
+				height: 50
+			},
+			y: {
+				padding: {
+					bottom: 10
+				}
+			}
+		},
+		legend: {
+			position: 'inset',
+			inset: {
+				anchor: 'bottom-left',
+				x: -8,
+				y: -20,
+				step: 1
+			}
+		},
+		point: {
+			r: 0
+		},
+		tooltip: {
+			show: false
+		}
+	});
+
+	chart.data.colors({
+		'2016': '#7dc5ad',
+		'2017': '#ee0101'
+	});
+
+	chart.xgrids([
+		{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},
+		{value: 6},
+		{value: 7},
+		{value: 8},
+		{value: 9},
+		{value: 10},
+		{value: 11},
+		{value: 12},
+		{value: 13},
+		{value: 14},
+		{value: 15},
+		{value: 16},
+		{value: 17},
+		{value: 18},
+		{value: 19},
+		{value: 20},
+		{value: 21},
+		{value: 22},
+		{value: 23},
+		{value: 24},
+		{value: 25},
+		{value: 26},
+		{value: 27},
+		{value: 28},
+		{value: 29},
+		{value: 30}
+	]);
+
 }
