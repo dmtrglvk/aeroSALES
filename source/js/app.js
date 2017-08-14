@@ -26,6 +26,9 @@ jQuery(function(){
 		select.on('hide.bs.select', function(){
 			jQuery('.page-fader').hide();
 		});
+	}
+
+	if(jQuery('.custom-date').length) {
 		jQuery('.custom-date').on('change', function(){
 			if(jQuery(this).is(':checked')) {
 				jQuery(this).parents('.checkbox-wrap').next().removeClass('inactive').find('input').removeAttr('disabled');
@@ -34,6 +37,7 @@ jQuery(function(){
 			}
 		})
 	}
+
 	popup();
 
 	if(jQuery('.datepicker-row').length) {
@@ -44,6 +48,12 @@ jQuery(function(){
 	if(jQuery('.d3chart').length) {
 		callCharts();
 	}
+
+	if(jQuery('.evo-chart').length) {
+		singleLineChart('.line-chart1', '#7dc5ad');
+		singleLineChart('.line-chart2', '#4990e2');
+	}
+
 });
 
 function callCharts() {
@@ -387,7 +397,7 @@ function popup() {
 
 		fader.fadeIn(300, function(){
 			if(jQuery(window).width() < 700) {
-				el.css('top', clickedEl.offset().top - 200 + 'px')
+				el.css('top', clickedEl.offset().top + 20)
 			}
 			el.fadeIn(300, function(){
 				if(el.hasClass('chart-popup')) {
@@ -462,4 +472,51 @@ function callPopupChart() {
 		'2017': '#ee0101'
 	});
 
-	chart.xgrids([{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10},{value: 11},{value: 12},{value: 13},{value: 14},{value: 15},{value: 16},{value: 17},{value: 18},{value: 19},{value: 20},{value: 21},{value: 22},{value: 23},{value: 24},{value: 25},{value: 26},{value: 27},{value: 28},{value: 29},{value: 30}]);}
+	chart.xgrids([{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10},{value: 11},{value: 12},{value: 13},{value: 14},{value: 15},{value: 16},{value: 17},{value: 18},{value: 19},{value: 20},{value: 21},{value: 22},{value: 23},{value: 24},{value: 25},{value: 26},{value: 27},{value: 28},{value: 29},{value: 30}]);
+}
+
+function singleLineChart(placeholder, color) {
+	var chart = c3.generate({
+		bindto: placeholder,
+		data: {
+			xs: {
+				'Date of Departure': "cat1"
+			},
+			columns: [
+				["cat1", -30,-29,-28,-27,-26,-25,-24,-23,-22,-21,-20,-19,-18,-17,-16,-15,-14,-13,-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1],
+				["Date of Departure", 363,365,360,363,361,365,370,361,363,365,360,361,362,363,364,365,360,355,368,369,368,364,363,362,363,365,360,363,361,365,361,365]
+			],
+			labels: true
+		},
+		axis: {
+			x: {
+				padding: {
+					left: -0.2,
+					right: 1.2
+				},
+				type: "category",
+				height: 50
+			},
+			y: {
+				padding: {
+					bottom: 10
+				}
+			}
+		},
+		legend: {
+			position: 'bottom'
+		},
+		point: {
+			r: 0
+		},
+		tooltip: {
+			show: false
+		}
+	});
+
+	chart.data.colors({
+		'Date of Departure': color
+	});
+
+	chart.xgrids([{value: 1},{value: 2},{value: 3},{value: 4},{value: 5},{value: 6},{value: 7},{value: 8},{value: 9},{value: 10},{value: 11},{value: 12},{value: 13},{value: 14},{value: 15},{value: 16},{value: 17},{value: 18},{value: 19},{value: 20},{value: 21},{value: 22},{value: 23},{value: 24},{value: 25},{value: 26},{value: 27},{value: 28},{value: 29},{value: 30}]);
+}

@@ -81,3 +81,42 @@
 			display: inline-block
 			margin: 0 0 15px
 
+.evolution-panel
+	width:100%
+
+	.r-bar
+		max-width: 100%
+		justify-content: space-between
+		align-items: flex-start
+
+		.select-item
+			&:first-child
+				.bootstrap-select
+					.dropdown-menu
+						left: -12px
+						right: auto
+
+		.bootstrap-select
+			margin: 0
+
+			.dropdown-toggle
+				max-width: 330px
+
+				.filter-option
+					max-width: 300px
+
+	.datepicker-row
+		margin: 8px 0 0
+
+		input
+			font: 14px/1.71 $roboto-regular
+			padding: 2px 0
+			color: #38414b
+
+	span.label
+		display: block
+		font-size: 12px
+		margin: 0 0 5px
+
+		+below($desktop)
+			text-align: left

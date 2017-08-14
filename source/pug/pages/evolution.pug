@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+	include ../common/head.pug
+	body
+		.page
+			.page-overlay
+			.page-fader
+
+			include ../components/menu-panel.pug
+			include ../components/header.pug
+			.control-panel
+				h1.title Evolution
+				.r-bar
+					button.blue-btn.upload.js-popup-opener(href="#create-query")
+						svg
+							use(xlink:href='#upload')
+						| Save to My Queries
+					button.blue-btn.save
+						svg
+							use(xlink:href='#save')
+						| Save
+					button.dark-grey-btn.export
+						svg
+							use(xlink:href='#exit')
+						| Export
+			.content
+				.white-content
+					.content-panel
+						.evolution-panel
+							.r-bar
+								.select-item
+									span.label Region
+									select.selectpicker(multiple)
+										each mon in [{month: 'January'}, {month: 'February'}, {month: 'March'}, {month: 'May', selected: true}, {month: 'June'}, {month: 'July'}, {month: 'August'}, {month: 'September'}, {month: 'October'}, {month: 'November'}, {month: 'December'}]
+											option(selected=mon.selected)= mon.month
+								.select-item
+									span.label Route
+									select.selectpicker(title="All Routes")
+										option My New Sales Report
+										option My New Report
+								.select-item
+									span.label Sector
+									select.selectpicker(title="In & Out")
+										option My New Sales Report
+										option My New Report
+								.select-item
+									span.label Flight No.
+									select.selectpicker(title="All Sectors")
+										option My New Sales Report
+										option My New Report
+								.select-item
+									span.label In/Out
+									select.selectpicker(title="All Sectors")
+										option My New Sales Report
+										option My New Report
+								.select-item
+									span.label Flight Date
+									.datepicker-row
+										input(type="text", id="from-date", class="datepicker" value='2017-08-01')
+
+					.line-chart-wrap
+						span No. of PAX
+						.evo-chart.line-chart-v2.line-chart1
+					.line-chart-wrap
+						span No. of PAX
+						.evo-chart.line-chart-v2.line-chart2
+
+				include ../components/create-query-popup

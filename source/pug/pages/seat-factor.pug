@@ -11,7 +11,7 @@ html(lang='en')
 			.control-panel
 				h1.title Seat Factor
 				.r-bar
-					button.blue-btn.upload
+					button.blue-btn.upload.js-popup-opener(href="#create-query")
 						svg
 							use(xlink:href='#upload')
 						| Save to My Queries
@@ -434,3 +434,5 @@ html(lang='en')
 								each cell in ['45.7', '55.8', '76.5', '80.8', '52.0', '34.4', '64.1', '53.6', '77.9', '85.3', '36.4', '86.1', '44.6', '53.1', '86.8', '51.4', '45.8', '27.5', '44.2', '80.8', '80.8', '35.2', '44.2', '66.3', '65.1', '68.4', '41.0', '66.3', '76.5', '50.9', '49.0']
 									td=cell
 								td(data-attr = "add-cell", data-total="total-cell") 335.2
+
+				include ../components/create-query-popup
