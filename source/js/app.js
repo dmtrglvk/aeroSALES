@@ -17,17 +17,20 @@ jQuery(function(){
 	jQuery('select').selectpicker();
 
 	if(jQuery('.content-info').length) {
-		jQuery('.content-info select').on('show.bs.select', function(){
+
+		var select = jQuery('.content-info select');
+
+		select.on('show.bs.select', function(){
 			jQuery('.page-fader').show();
 		});
-		jQuery('.content-info select').on('hide.bs.select', function(){
+		select.on('hide.bs.select', function(){
 			jQuery('.page-fader').hide();
-		})
-		jQuery('#custom-date').on('change', function(){
+		});
+		jQuery('.custom-date').on('change', function(){
 			if(jQuery(this).is(':checked')) {
-				jQuery(this).parents('.content-sidebar').find('.datepicker-row').removeClass('inactive').find('input').removeAttr('disabled');
+				jQuery(this).parents('.checkbox-wrap').next().removeClass('inactive').find('input').removeAttr('disabled');
 			} else {
-				jQuery(this).parents('.content-sidebar').find('.datepicker-row').addClass('inactive').find('input').prop('disabled', 'disabled');
+				jQuery(this).parents('.checkbox-wrap').next().addClass('inactive').find('input').prop('disabled', 'disabled');
 			}
 		})
 	}

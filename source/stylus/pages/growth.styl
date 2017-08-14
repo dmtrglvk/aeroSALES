@@ -195,8 +195,7 @@ label.input-label
 	.add
 		position: absolute
 		right: 0
-		top:50%
-		transform:translate(0, -50%)
+		top:25px
 		width:18px
 		height:18px
 
@@ -248,3 +247,31 @@ label.input-label
 				display: block
 				width: 100%
 				height: 100%
+
+.create-query-header
+	margin: 0 0 35px
+
+	label
+		font: 24px $roboto-medium
+		color:#435464
+		display: inline-block
+		vertical-align: middle
+		margin: 0 40px 0 0
+
+	input[type=text]
+		background: $white
+		font: 14px/30px $roboto-regular
+		border: 1px solid rgba(151, 151, 151, 0.56)
+		margin: 0
+		padding: 0 8px
+		display: inline-block
+		vertical-align: middle
+		width: 50%
+
+.create-query-wrap
+	.cols
+		display: flex
+		justify-content: space-between
+
+		.col
+			width: calc(50% - 10px)
