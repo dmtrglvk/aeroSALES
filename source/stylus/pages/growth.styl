@@ -258,6 +258,10 @@ label.input-label
 		vertical-align: middle
 		margin: 0 40px 0 0
 
+		+below($desktop)
+			font-size: 16px
+			margin: 0 0 10px
+
 	input[type=text]
 		background: $white
 		font: 14px/30px $roboto-regular
@@ -268,10 +272,40 @@ label.input-label
 		vertical-align: middle
 		width: 50%
 
+		+below($desktop)
+			display: block
+			width:100%
+			box-sizing: border-box
+
 .create-query-wrap
 	.cols
 		display: flex
 		justify-content: space-between
 
+		+below($desktop)
+			display: block
+
 		.col
 			width: calc(50% - 10px)
+
+			+below($desktop)
+				width:100%
+
+	.buttons
+		text-align: right
+
+		+below($desktop)
+			padding: 20px 0 0
+
+		button[class*="-btn"]
+			padding: 11px 30px
+			font-family: $roboto-medium
+
+			+below($desktop)
+				padding: 11px 0
+				width: calc(50% - 2px)
+				margin: 0
+
+			&.transparent-btn
+				background: none
+				color:$dark-grey-blue
