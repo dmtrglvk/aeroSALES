@@ -54,6 +54,13 @@ jQuery(function(){
 		singleLineChart('.line-chart2', '#4990e2');
 	}
 
+	if(jQuery('.upload-block').length) {
+		jQuery('.browse-file').click(function(e){
+			e.preventDefault();
+			jQuery(this).parents('.upload-block').find('input[type="file"]').click();
+		})
+	}
+
 });
 
 function callCharts() {

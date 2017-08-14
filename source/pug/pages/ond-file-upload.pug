@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+	include ../common/head.pug
+	body
+		.page
+			.page-overlay
+			.page-fader
+
+			include ../components/menu-panel.pug
+			include ../components/header.pug
+			.control-panel
+				h1.title Origin and Destinations
+				.r-bar
+					button.blue-btn.upload.js-popup-opener(href="#create-query")
+						svg
+							use(xlink:href='#upload')
+						| Save to My Queries
+					button.blue-btn.save
+						svg
+							use(xlink:href='#save')
+						| Save
+					button.dark-grey-btn.export
+						svg
+							use(xlink:href='#exit')
+						| Export
+			.content
+				.white-content
+					.upload-block
+						svg
+							use(xlink:href='#hand')
+						p
+							| Drag the Origin and
+							br
+							| Destinations File Here
+						span Or
+						button.blue-btn.screen.browse-file
+							svg
+								use(xlink:href='#screen')
+							| Browse for the file
+
+						input(type="file", class="file-upload")
+
+
+				include ../components/create-query-popup
