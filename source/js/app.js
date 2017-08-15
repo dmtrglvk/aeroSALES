@@ -185,16 +185,27 @@ function menuPanel() {
 		$pageOverlay = jQuery('.page-overlay');
 
 	$opener.on('click', function(e){
+
+		var menuIcon = false;
+
+		if(jQuery(this).find('svg use').attr('xlink:href') == '#menu' || jQuery(this).find('svg use').attr('xlink:href') == '#back') {
+			menuIcon = true;
+		}
+
 		e.preventDefault();
 		if(!$parent.hasClass('opened')) {
 			$parent.addClass('opened');
 			jQuery(this).parent().addClass('selected');
-			jQuery(this).find('svg use').attr('xlink:href', '#back');
+			if(menuIcon) {
+				jQuery(this).find('svg use').attr('xlink:href', '#back');
+			}
 			jQuery('body').addClass('menu-open');
 		} else {
 			$parent.removeClass('opened');
 			jQuery(this).parent().removeClass('selected');
-			jQuery(this).find('svg use').attr('xlink:href', '#menu');
+			if(menuIcon) {
+				jQuery(this).find('svg use').attr('xlink:href', '#menu');
+			}
 			jQuery('body').removeClass('menu-open');
 		}
 	});

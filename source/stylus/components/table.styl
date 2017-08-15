@@ -63,41 +63,43 @@ table:not(.pika-table)
 		td
 			background: rgba(250, 184, 127, 0.3) !important
 
-.white-row-ttl
+table:not(.pika-table).white-row-ttl
 	td
 		&:first-child
 			background: inherit
 
 .multi-table
 	padding: 34px 15px
-	th
-		svg
-			width: 7px
-			height: 8px
-			fill: #435464
-	td
-		&:first-child
-			background: #fff
-	.outer
+
+	table:not(.pika-table)
+		th
+			svg
+				width: 7px
+				height: 8px
+				fill: #435464
 		td
 			&:first-child
-				cursor: pointer
-				padding-left: 10px
-				position: relative
-				&:before
-					border-top: 4px solid #000000
-					border-left: 2px solid transparent
-					border-right: 2px solid transparent
-					position: absolute
-					left: 0
-					top: 50%
-					margin-top: -2px
-					content: ''
-		&.open
+				background: #fff
+		.outer
 			td
-				&:before
-					border-bottom: 4px solid #000000
-					border-top: 0
+				&:first-child
+					cursor: pointer
+					padding-left: 10px
+					position: relative
+					&:before
+						border-top: 4px solid #000000
+						border-left: 2px solid transparent
+						border-right: 2px solid transparent
+						position: absolute
+						left: 0
+						top: 50%
+						margin-top: -2px
+						content: ''
+			&.open
+				td
+					&:before
+						border-bottom: 4px solid #000000
+						border-top: 0
 
 .rosy-pink
 	background: $rosy-pink
